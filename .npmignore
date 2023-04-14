@@ -1,0 +1,14 @@
+src
+node_modules
+.eslintignore
+.eslintrc.js
+.gitignore
+babel.config.js
+jest.config.js
+.prettierignore
+/prettier.config.js
+/tsconfig.json
+/package-lock.json
+.idea
+/CHANGELOG.md
+/tsconfig.tsbuildinfo
