@@ -6,4 +6,5 @@ export class ApiRoute {
   static User: UserRouteType = { path: '/users', get: { username: '' }, post: { username: '', nickname: '' } };
   static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
+  static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 500 } };
 }
