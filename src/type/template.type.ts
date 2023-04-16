@@ -1,3 +1,3 @@
 import { RouteType } from './route.type';
 
-export type TemplateRouteType = RouteType & { get: { pageIndex: number, pageSize: number } };
+export type TemplateRouteType = RouteType & { get: { pageIndex: number; pageSize: number } };
