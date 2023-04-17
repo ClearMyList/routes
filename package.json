@@ -4,6 +4,7 @@
 	"description": "API routes of https://ClearMyList.io.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"private": false,
 	"scripts": {
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier -w .",
