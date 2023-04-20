@@ -18,3 +18,5 @@ export type UserProfileRouteType = RouteType & { get: { username: string } } & {
     website?: string;
   };
 };
+
+export type UserAvatarRouteType = RouteType & { [key in 'get' | 'delete']: { username: string } };

@@ -1,6 +1,6 @@
 {
   "name": "@clearmylist/routes",
-  "version": "0.8.13",
+  "version": "0.8.15",
   "description": "API routes of https://ClearMyList.io.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
     "tsc": "tsc --build --force",
-    "pub": "rm -rf dist; npm run tsc && npm publish --access public"
+    "pub": "rm -rf dist; prettier -w src && npm run tsc && npm publish --access public"
   },
   "repository": {
     "type": "git",
