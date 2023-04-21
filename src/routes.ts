@@ -10,9 +10,13 @@ export class ApiRoute {
     get: { username: '' },
     post: { userId: '' }
   };
-  static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } }
+  static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } };
   static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
   static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 500 } };
-  static TaskAttachment: TaskAttachmentType = { path: '/task/attachments', get: {} }
+  static TaskAttachment: TaskAttachmentType = {
+    path: '/task/attachments',
+    get: {},
+    deletion: { attachmentId: '', storageFilename: '' }
+  };
 }
