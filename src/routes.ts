@@ -23,6 +23,6 @@ export class ApiRoute {
   static Quota: QuotaRouteType = {
     path: '/quotas',
     get: { username: '' },
-    post: { username: '', quota: { subject: '', task: { maxNewAmountMonthly: 0 }, storage: { maxSizeInBytes: 0 } } }
+    post: { username: '', quota: { userId: '' } }
   };
 }

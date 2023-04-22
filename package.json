@@ -1,6 +1,6 @@
 {
   "name": "@clearmylist/routes",
-  "version": "0.8.19",
+  "version": "0.8.21",
   "description": "API routes of https://ClearMyList.io.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,14 +37,14 @@
     }
   },
   "dependencies": {
-    "@clearmylist/data-types": "0.8.17",
-    "eslint": "8.38.0",
+    "@clearmylist/data-types": "0.8.23",
+    "eslint": "8.39.0",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5"
   },
   "devDependencies": {
-    "@types/node": "18.15.11",
+    "@types/node": "18.15.13",
     "husky": "8.0.3",
     "pinst": "3.0.0",
     "tslint": "6.1.3",
