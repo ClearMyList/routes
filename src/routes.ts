@@ -1,5 +1,6 @@
 import { NotificationRouteType } from './type/notification.type';
-import { TaskAttachmentType } from './type/task.type';
+import { QuotaRouteType } from './type/quota.type';
+import { TaskAttachmentRouteType } from './type/task.type';
 import { TemplateRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
@@ -14,9 +15,14 @@ export class ApiRoute {
   static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
   static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 500 } };
-  static TaskAttachment: TaskAttachmentType = {
+  static TaskAttachment: TaskAttachmentRouteType = {
     path: '/task/attachments',
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
+  };
+  static Quota: QuotaRouteType = {
+    path: '/quotas',
+    get: { username: '' },
+    post: { username: '', quota: { subject: '', task: { maxNewAmountMonthly: 0 }, storage: { maxSizeInBytes: 0 } } }
   };
 }

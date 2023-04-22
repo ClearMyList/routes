@@ -1,6 +1,6 @@
 {
   "name": "@clearmylist/routes",
-  "version": "0.8.18",
+  "version": "0.8.19",
   "description": "API routes of https://ClearMyList.io.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
     "tsc": "tsc --build --force",
-    "pub": "rm -rf dist; prettier -w src && npm run tsc && npm publish --access public"
+    "pub": "rm -rf dist; prettier -w src && npm run tsc && npm publish --access public && rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     }
   },
   "dependencies": {
+    "@clearmylist/data-types": "0.8.17",
     "eslint": "8.38.0",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.8.0",
