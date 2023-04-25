@@ -32,15 +32,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clearmylist/data-types@npm:0.8.23":
-  version: 0.8.23
-  resolution: "@clearmylist/data-types@npm:0.8.23"
+"@clearmylist/data-types@npm:0.8.27":
+  version: 0.8.27
+  resolution: "@clearmylist/data-types@npm:0.8.27"
   dependencies:
     eslint: 8.38.0
     eslint-config-airbnb-typescript: 17.0.0
     eslint-config-prettier: 8.8.0
     eslint-plugin-import: 2.27.5
-  checksum: e779470009712c3c61291a0eeddae84a59bff6e2acbabfaf3a826ef1d39f865039564e61603cba2876c8fdf8a08a53d94a9497bead2d6a79dbb5695d48c9be5d
+  checksum: 5dc2539d5b0f8d29ee1de3187288f87772c3bdaa91469e885da80858bbdfe21e30a7a293db16b4d681be4060f832c523d66ac31be79d7da796386d2903fa0b66
   languageName: node
   linkType: hard
 
@@ -48,7 +48,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@clearmylist/routes@workspace:."
   dependencies:
-    "@clearmylist/data-types": 0.8.23
+    "@clearmylist/data-types": 0.8.27
     "@types/node": 18.15.13
     eslint: 8.39.0
     eslint-config-airbnb-typescript: 17.0.0

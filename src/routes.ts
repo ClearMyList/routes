@@ -1,4 +1,5 @@
 import { NotificationRouteType } from './type/notification.type';
+import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
 import { TaskAttachmentRouteType } from './type/task.type';
 import { TemplateRouteType } from './type/template.type';
@@ -24,5 +25,9 @@ export class ApiRoute {
     path: '/quotas',
     get: { username: '' },
     post: { username: '', quota: { userId: '' } }
+  };
+  static Plaza: PlazaActivityListRouteType = {
+    path: '/plaza-activities',
+    get: { username: '', pageIndex: 0, pageSize: 50 }
   };
 }
