@@ -1,7 +1,7 @@
 import { NotificationRouteType } from './type/notification.type';
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
-import { TaskAttachmentRouteType } from './type/task.type';
+import { TaskAttachmentRouteType, TaskTagRouteType } from './type/task.type';
 import { TemplateRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
@@ -30,4 +30,5 @@ export class ApiRoute {
     path: '/plaza-activities',
     get: { username: '', pageIndex: 0, pageSize: 50 }
   };
+  static TaskTag: TaskTagRouteType = { path: '/task/tags', get: { taskIds: [] } };
 }
