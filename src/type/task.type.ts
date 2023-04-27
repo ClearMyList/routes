@@ -1,5 +1,10 @@
+import { TaskDataType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
+
+export type TaskRouteType = RouteType & {
+  post: TaskDataType;
+};
 
 export type TaskAttachmentRouteType = RouteType & {
   get: TaskAttachmentGetRequestType;

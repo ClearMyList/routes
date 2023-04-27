@@ -1,7 +1,7 @@
 import { NotificationRouteType } from './type/notification.type';
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
-import { TaskAttachmentRouteType, TaskTagRouteType } from './type/task.type';
+import { TaskAttachmentRouteType, TaskRouteType, TaskTagRouteType } from './type/task.type';
 import { TemplateRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
@@ -16,6 +16,15 @@ export class ApiRoute {
   static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
   static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 500 } };
+  static Task: TaskRouteType = {
+    path: '/tasks',
+    post: {
+      subject: '',
+      creatorId: '',
+      assigneeId: '',
+      visibility: 'private'
+    }
+  };
   static TaskAttachment: TaskAttachmentRouteType = {
     path: '/task/attachments',
     get: {},
