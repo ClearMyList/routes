@@ -31,6 +31,10 @@ export type TaskLikeGetRequestType = {
   taskIds: string[];
 };
 
-export type TaskLikePostRequestType = {
-  taskLikes: TaskLikeDataType[];
+export type TaskLikeGetResponseType = BaseResponseType & {
+  likes?: TaskLikeDataType[];
 };
+
+export type TaskLikePostRequestType = { userId: string; taskId: string; liked: boolean };
+
+export type TaskLikePostResponseType = BaseResponseType & { taskLike?: TaskLikeDataType };

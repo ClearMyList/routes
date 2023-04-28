@@ -34,7 +34,11 @@ export class ApiRoute {
     deletion: { attachmentId: '', storageFilename: '' }
   };
   static TaskTag: TaskTagRouteType = { path: '/task/tags', get: { taskIds: [] } };
-  static TaskLike: TaskLikeRouteType = { path: '/task/likes', get: { taskIds: [] }, post: { taskLikes: [] } };
+  static TaskLike: TaskLikeRouteType = {
+    path: '/task/likes',
+    get: { taskIds: [] },
+    post: { userId: '', taskId: '', liked: false }
+  };
 
   static Quota: QuotaRouteType = {
     path: '/quotas',
