@@ -1,7 +1,7 @@
 import { NotificationRouteType } from './type/notification.type';
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
-import { TaskAttachmentRouteType, TaskRouteType, TaskTagRouteType } from './type/task.type';
+import { TaskAttachmentRouteType, TaskLikeRouteType, TaskRouteType, TaskTagRouteType } from './type/task.type';
 import { TemplateRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
@@ -13,9 +13,12 @@ export class ApiRoute {
     post: { userId: '' }
   };
   static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } };
+
   static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
+
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
   static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 500 } };
+
   static Task: TaskRouteType = {
     path: '/tasks',
     post: {
@@ -30,14 +33,17 @@ export class ApiRoute {
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
   };
+  static TaskTag: TaskTagRouteType = { path: '/task/tags', get: { taskIds: [] } };
+  static TaskLike: TaskLikeRouteType = { path: '/task/likes', get: { taskIds: [] }, post: { taskLikes: [] } };
+
   static Quota: QuotaRouteType = {
     path: '/quotas',
     get: { username: '' },
     post: { username: '', quota: { userId: '' } }
   };
-  static Plaza: PlazaActivityListRouteType = {
+
+  static PlazaActivity: PlazaActivityListRouteType = {
     path: '/plaza-activities',
     get: { username: '', pageIndex: 0, pageSize: 50 }
   };
-  static TaskTag: TaskTagRouteType = { path: '/task/tags', get: { taskIds: [] } };
 }
