@@ -47,6 +47,7 @@ export class ApiRoute {
   };
   static TaskFork: TaskForkRouteType = {
     path: '/task/fork',
+    get: { taskIds: [] },
     post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
   };
 
