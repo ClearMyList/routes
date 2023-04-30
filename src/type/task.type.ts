@@ -1,4 +1,4 @@
-import { TaskDataType, TaskLikeDataType } from '@clearmylist/data-types';
+import { TaskDataType, TaskForkDataType, TaskLikeDataType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -44,3 +44,11 @@ export type TaskForkRouteType = RouteType & { post: TaskForkPostRequestType };
 export type TaskForkPostRequestType = TaskDataType;
 
 export type TaskForkPostResponseType = BaseResponseType & { task?: TaskDataType };
+
+export type TaskForkGetRequestType = {
+  taskIds: string[];
+};
+
+export type TaskForkGetResponseType = BaseResponseType & {
+  forks?: TaskForkDataType[];
+};
