@@ -38,3 +38,9 @@ export type TaskLikeGetResponseType = BaseResponseType & {
 export type TaskLikePostRequestType = { userId: string; taskId: string; liked: boolean };
 
 export type TaskLikePostResponseType = BaseResponseType & { taskLike?: TaskLikeDataType };
+
+export type TaskForkRouteType = RouteType & { post: TaskForkPostRequestType };
+
+export type TaskForkPostRequestType = TaskDataType;
+
+export type TaskForkPostResponseType = BaseResponseType & { task?: TaskDataType };

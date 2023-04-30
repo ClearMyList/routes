@@ -1,7 +1,13 @@
 import { NotificationRouteType } from './type/notification.type';
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
-import { TaskAttachmentRouteType, TaskLikeRouteType, TaskRouteType, TaskTagRouteType } from './type/task.type';
+import {
+  TaskAttachmentRouteType,
+  TaskForkRouteType,
+  TaskLikeRouteType,
+  TaskRouteType,
+  TaskTagRouteType
+} from './type/task.type';
 import { TemplateRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
@@ -38,6 +44,10 @@ export class ApiRoute {
     path: '/task/likes',
     get: { taskIds: [] },
     post: { userId: '', taskId: '', liked: false }
+  };
+  static TaskFork: TaskForkRouteType = {
+    path: '/task/fork',
+    post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
   };
 
   static Quota: QuotaRouteType = {
