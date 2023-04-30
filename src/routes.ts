@@ -23,7 +23,7 @@ export class ApiRoute {
   static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
 
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
-  static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 500 } };
+  static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 30 } };
 
   static Task: TaskRouteType = {
     path: '/tasks',
@@ -59,6 +59,6 @@ export class ApiRoute {
 
   static PlazaActivity: PlazaActivityListRouteType = {
     path: '/plaza-activities',
-    get: { username: '', pageIndex: 0, pageSize: 50 }
+    get: { username: '', pageIndex: 0, pageSize: 30 }
   };
 }
