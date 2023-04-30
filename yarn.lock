@@ -32,15 +32,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clearmylist/data-types@npm:0.8.32":
-  version: 0.8.32
-  resolution: "@clearmylist/data-types@npm:0.8.32"
+"@clearmylist/data-types@npm:0.8.34":
+  version: 0.8.34
+  resolution: "@clearmylist/data-types@npm:0.8.34"
   dependencies:
     eslint: 8.38.0
     eslint-config-airbnb-typescript: 17.0.0
     eslint-config-prettier: 8.8.0
     eslint-plugin-import: 2.27.5
-  checksum: bfe86ad3bbf2df6db97cfb9aaf492683e9bb8382555bf82f287c39d6a1dde1f5af63eaa24b0bd91f193218d0be33b9d8eaf5a8d4785bc24e7306038ab9977e88
+  checksum: c23d831e0b79e7853a7940350f1d31596bdd24ab1a1343c4582d16e127aa503474ea34d4406951fc69e0010e44d602cdf3aa949096a93dbfb1771c4a50ea739a
   languageName: node
   linkType: hard
 
@@ -48,7 +48,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@clearmylist/routes@workspace:."
   dependencies:
-    "@clearmylist/data-types": 0.8.32
+    "@clearmylist/data-types": 0.8.34
     "@types/node": 18.15.13
     eslint: 8.39.0
     eslint-config-airbnb-typescript: 17.0.0
@@ -73,9 +73,9 @@ __metadata:
   linkType: hard
 
 "@eslint-community/regexpp@npm:^4.4.0":
-  version: 4.5.0
-  resolution: "@eslint-community/regexpp@npm:4.5.0"
-  checksum: 99c01335947dbd7f2129e954413067e217ccaa4e219fe0917b7d2bd96135789384b8fedbfb8eb09584d5130b27a7b876a7150ab7376f51b3a0c377d5ce026a10
+  version: 4.5.1
+  resolution: "@eslint-community/regexpp@npm:4.5.1"
+  checksum: 6d901166d64998d591fab4db1c2f872981ccd5f6fe066a1ad0a93d4e11855ecae6bfb76660869a469563e8882d4307228cebd41142adb409d182f2966771e57e
   languageName: node
   linkType: hard
 
