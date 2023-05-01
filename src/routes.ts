@@ -20,7 +20,10 @@ export class ApiRoute {
   };
   static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } };
 
-  static Notification: NotificationRouteType = { path: '/notifications', get: { pageIndex: 0, pageSize: 20 } };
+  static Notification: NotificationRouteType = {
+    path: '/notifications',
+    get: { userId: '', pageIndex: 0, pageSize: 20 }
+  };
 
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
   static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 30 } };
