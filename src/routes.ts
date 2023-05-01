@@ -22,7 +22,7 @@ export class ApiRoute {
 
   static Notification: NotificationRouteType = {
     path: '/notifications',
-    get: { userId: '', pageIndex: 0, pageSize: 20 }
+    get: { subscriberId: '', pageIndex: 0, pageSize: 20 }
   };
 
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
