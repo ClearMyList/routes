@@ -1,4 +1,4 @@
-import { NotificationRouteType } from './type/notification.type';
+import { NotificationRouteType, NotificationUnreadCountRouteType } from './type/notification.type';
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
 import {
@@ -23,6 +23,10 @@ export class ApiRoute {
   static Notification: NotificationRouteType = {
     path: '/notifications',
     get: { subscriberId: '', pageIndex: 0, pageSize: 20 }
+  };
+  static NotificationUnreadCount: NotificationUnreadCountRouteType = {
+    path: '/notifications/unread-count',
+    get: { subscriberId: '' }
   };
 
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };

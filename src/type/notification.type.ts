@@ -7,3 +7,9 @@ export type NotificationRouteType = RouteType & { get: NotificationGetRequestTyp
 export type NotificationGetRequestType = { subscriberId: string; pageIndex: number; pageSize: number };
 
 export type NotificationGetResponseType = BaseResponseType & { notifications: NotificationDataType[] };
+
+export type NotificationUnreadCountRouteType = RouteType & { get: NotificationUnreadCountGetRequestType };
+
+export type NotificationUnreadCountGetRequestType = { subscriberId: string };
+
+export type NotificationUnreadCountGetResponseType = BaseResponseType & { count: number };
