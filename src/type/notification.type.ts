@@ -1,4 +1,4 @@
-import { NotificationDataType, UserDataType } from '@clearmylist/data-types';
+import { NotificationDataType, UserDataType, UserProfileDataType } from '@clearmylist/data-types';
 import { RouteType } from './route.type';
 import { BaseResponseType } from './base.type';
 
@@ -7,7 +7,7 @@ export type NotificationRouteType = RouteType & { get: NotificationGetListReques
 export type NotificationGetListRequestType = { subscriberId: string; pageIndex: number; pageSize: number };
 
 export type NotificationGetListResponseType = BaseResponseType & {
-  notifications: NotificationDataType & { publisher: UserDataType }[];
+  notifications: NotificationDataType & { publisher?: UserDataType; problisherProfile?: UserProfileDataType }[];
 };
 
 export type NotificationUnreadCountRouteType = RouteType & { get: NotificationUnreadCountGetRequestType };
