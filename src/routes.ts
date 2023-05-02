@@ -32,7 +32,7 @@ export class ApiRoute {
     path: '/notifications/unread-count',
     get: { subscriberId: '' }
   };
-  static ReadNotification: NotificationReadNotification = {
+  static NotificationRead: NotificationReadNotification = {
     path: '/notifications/read',
     post: { subscriberId: '', isRead: false }
   };
