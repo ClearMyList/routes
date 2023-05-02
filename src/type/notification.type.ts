@@ -16,8 +16,8 @@ export type NotificationUnreadCountGetRequestType = { subscriberId: string };
 
 export type NotificationUnreadCountGetResponseType = BaseResponseType & { count: number };
 
-export type NotificationReadNotification = RouteType & { post: ReadNotificationPostRequestType };
+export type NotificationReadNotification = RouteType & { post: NotificationReadPostRequestType };
 
-export type ReadNotificationPostRequestType = { subscriberId: string; isRead: boolean };
+export type NotificationReadPostRequestType = { subscriberId: string; isRead: boolean };
 
-export type ReadNotificationPostResponseType = BaseResponseType & { notification?: NotificationDataType };
+export type NotificationReadPostResponseType = BaseResponseType & { notification?: NotificationDataType };
