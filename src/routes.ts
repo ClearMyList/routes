@@ -34,7 +34,7 @@ export class ApiRoute {
   };
   static NotificationRead: NotificationReadNotification = {
     path: '/notifications/read',
-    post: { subscriberId: '', isRead: false }
+    post: { notificationId: '', subscriberId: '', isRead: false }
   };
 
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
