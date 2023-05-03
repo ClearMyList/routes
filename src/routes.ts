@@ -1,4 +1,5 @@
 import {
+  NotificationReadAllNotification,
   NotificationReadNotification,
   NotificationRouteType,
   NotificationUnreadCountRouteType
@@ -35,6 +36,10 @@ export class ApiRoute {
   static NotificationRead: NotificationReadNotification = {
     path: '/notifications/read',
     post: { notificationId: '', subscriberId: '', isRead: false }
+  };
+  static NotificationReadAll: NotificationReadAllNotification = {
+    path: '/notifications/read-all',
+    post: { subscriberId: '' }
   };
 
   static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };

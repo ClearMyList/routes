@@ -21,3 +21,9 @@ export type NotificationReadNotification = RouteType & { post: NotificationReadP
 export type NotificationReadPostRequestType = { notificationId: string; subscriberId: string; isRead: boolean };
 
 export type NotificationReadPostResponseType = BaseResponseType & { notification?: NotificationDataType };
+
+export type NotificationReadAllNotification = RouteType & { post: NotificationReadAllPostRequestType };
+
+export type NotificationReadAllPostRequestType = { subscriberId: string; beforeDateTime?: Date };
+
+export type NotificationReadAllPostResponseType = BaseResponseType;
