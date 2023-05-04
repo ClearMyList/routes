@@ -33,14 +33,14 @@ __metadata:
   linkType: hard
 
 "@clearmylist/data-types@npm:~0.8.43":
-  version: 0.8.45
-  resolution: "@clearmylist/data-types@npm:0.8.45"
+  version: 0.8.48
+  resolution: "@clearmylist/data-types@npm:0.8.48"
   dependencies:
     eslint: 8.38.0
     eslint-config-airbnb-typescript: 17.0.0
     eslint-config-prettier: 8.8.0
     eslint-plugin-import: 2.27.5
-  checksum: e0d69e3240a3e769c054a543762d5e74832d83ad2b38e60709f05501d46df5ab861e85947868c637649615de69ac8be1edb5514cb0469fcd47d1a5743e24b493
+  checksum: dd7550d6ee36ff9bc4084484217ce8d4afde083c4d9e7122a3cc061f6034d789462cf055cf76a75ad3f4e662250124a7c202bf2317d79ad9fc6f7344a98d6650
   languageName: node
   linkType: hard
 
