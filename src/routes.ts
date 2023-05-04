@@ -1,3 +1,4 @@
+import { AccomplishmentRouteType } from './type/accomplishment.type';
 import {
   NotificationReadAllNotification,
   NotificationReadNotification,
@@ -24,6 +25,11 @@ export class ApiRoute {
     post: { userId: '' }
   };
   static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } };
+
+  static Accomplishment: AccomplishmentRouteType = {
+    path: '/accomplishments',
+    get: { username: '' }
+  };
 
   static Notification: NotificationRouteType = {
     path: '/notifications',
