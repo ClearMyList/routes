@@ -48,8 +48,11 @@ export class ApiRoute {
     post: { subscriberId: '' }
   };
 
-  static Template: TemplateRouteType = { path: '/templates', get: { pageIndex: 0, pageSize: 20 } };
-  static TemplateLabel: TemplateRouteType = { path: '/templates/labels', get: { pageIndex: 0, pageSize: 30 } };
+  static Template: TemplateRouteType = {
+    path: '/templates',
+    get: { pageIndex: 0, pageSize: 20 },
+    post: { template: { authorId: '', subject: '' } }
+  };
 
   static Task: TaskRouteType = {
     path: '/tasks',
