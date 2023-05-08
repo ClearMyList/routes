@@ -12,7 +12,7 @@ import {
   TaskForkRouteType,
   TaskLikeRouteType,
   TaskRouteType,
-  TaskTagRouteType
+  TaskTagListRouteType
 } from './type/task.type';
 import { TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
@@ -55,7 +55,7 @@ export class ApiRoute {
   };
   static TemplateTag: TemplateTagListRouteType = {
     path: '/templates/tags',
-    get: { templateIds: [], pageIndex: 0, pageSize: 1000 }
+    get: { templateIds: [] }
   };
 
   static Task: TaskRouteType = {
@@ -72,7 +72,7 @@ export class ApiRoute {
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
   };
-  static TaskTag: TaskTagRouteType = { path: '/task/tags', get: { taskIds: [] } };
+  static TaskTag: TaskTagListRouteType = { path: '/tasks/tags', get: { taskIds: [] } };
   static TaskLike: TaskLikeRouteType = {
     path: '/task/likes',
     get: { taskIds: [] },

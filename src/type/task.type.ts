@@ -15,13 +15,13 @@ export type TaskAttachmentGetRequestType = { taskId?: string; storageFilename?: 
 
 export type TaskAttachmentDeletionRequestType = { attachmentId: string; storageFilename: string };
 
-export type TaskTagRouteType = RouteType & { get: TaskTagGetRequestType };
+export type TaskTagListRouteType = RouteType & { get: TaskTagListGetRequestType };
 
-export type TaskTagGetRequestType = {
+export type TaskTagListGetRequestType = {
   taskIds: string[];
 };
 
-export type TaskTagGetResponseType = BaseResponseType & {
+export type TaskTagListGetResponseType = BaseResponseType & {
   tags?: { tag: string; taskIds: string[] }[];
 };
 
