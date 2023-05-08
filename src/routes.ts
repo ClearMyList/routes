@@ -74,12 +74,12 @@ export class ApiRoute {
   };
   static TaskTag: TaskTagListRouteType = { path: '/tasks/tags', get: { taskIds: [] } };
   static TaskLike: TaskLikeRouteType = {
-    path: '/task/likes',
+    path: '/tasks/likes',
     get: { taskIds: [] },
     post: { userId: '', taskId: '', liked: false }
   };
   static TaskFork: TaskForkRouteType = {
-    path: '/task/fork',
+    path: '/tasks/forks',
     get: { taskIds: [] },
     post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
   };
