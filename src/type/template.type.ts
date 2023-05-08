@@ -15,4 +15,4 @@ export type TemplateTagListRouteType = RouteType & { get: TemplateTagListGetRequ
 
 export type TemplateTagListGetRequestType = { templateIds: string[] };
 
-export type TemplateTagListGetResponseType = BaseResponseType & { templateTags?: TemplateTagDataType[] };
+export type TemplateTagListGetResponseType = BaseResponseType & { tags?: TemplateTagDataType[] };
