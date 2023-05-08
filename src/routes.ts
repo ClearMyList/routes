@@ -14,7 +14,7 @@ import {
   TaskRouteType,
   TaskTagRouteType
 } from './type/task.type';
-import { TemplateRouteType } from './type/template.type';
+import { TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
 export class ApiRoute {
@@ -52,6 +52,10 @@ export class ApiRoute {
     path: '/templates',
     get: { pageIndex: 0, pageSize: 20 },
     post: { template: { authorId: '', subject: '' } }
+  };
+  static TemplateTag: TemplateTagListRouteType = {
+    path: '/templates/tags',
+    get: { templateIds: [] }
   };
 
   static Task: TaskRouteType = {
