@@ -55,7 +55,7 @@ export class ApiRoute {
   };
   static TemplateTag: TemplateTagListRouteType = {
     path: '/templates/tags',
-    get: { templateIds: [] }
+    get: { templateIds: [], pageIndex: 0, pageSize: 1000 }
   };
 
   static Task: TaskRouteType = {

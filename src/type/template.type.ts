@@ -13,6 +13,6 @@ export type TemplatePostResponseType = BaseResponseType & { template: TemplateDa
 
 export type TemplateTagListRouteType = RouteType & { get: TemplateTagListGetRequestType };
 
-export type TemplateTagListGetRequestType = { templateIds: string[] };
+export type TemplateTagListGetRequestType = { templateIds: string[]; pageIndex: number; pageSize: number };
 
 export type TemplateTagListGetResponseType = BaseResponseType & { templateTags?: TemplateTagDataType[] };
