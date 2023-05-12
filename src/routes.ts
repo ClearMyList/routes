@@ -7,6 +7,7 @@ import {
 } from './type/notification.type';
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
+import { ReminderRouteType } from './type/reminder.type';
 import {
   TaskAttachmentRouteType,
   TaskForkRouteType,
@@ -83,6 +84,8 @@ export class ApiRoute {
     get: { taskIds: [] },
     post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
   };
+
+  static Reminder: ReminderRouteType = { path: '/reminders', get: {} };
 
   static Quota: QuotaRouteType = {
     path: '/quotas',
