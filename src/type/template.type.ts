@@ -1,11 +1,15 @@
-import { TemplateDataType, TemplateTagDataType } from '@clearmylist/data-types';
+import { TemplateDataType, TemplateFolderDataType, TemplateTagDataType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
 export type TemplateRouteType = RouteType & {
-  get: { pageIndex: number; pageSize: number };
+  get: TemplateListGetRequestType;
   post: TemplatePostRequestType;
 };
+
+export type TemplateListGetRequestType = { pageIndex: number; pageSize: number; folder?: TemplateFolderDataType };
+
+export type TemplateListGetResponseType = BaseResponseType & { templates: TemplateDataType[] };
 
 export type TemplatePostRequestType = { template: TemplateDataType };
 
