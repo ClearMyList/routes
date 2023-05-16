@@ -37,7 +37,7 @@ export class ApiRoute {
 
   static Notification: NotificationRouteType = {
     path: '/notifications',
-    get: { subscriberId: '', pageIndex: 0, pageSize: 20 }
+    get: { subscriberId: '', pageIndex: 0, pageSize: 30 }
   };
   static NotificationUnreadCount: NotificationUnreadCountRouteType = {
     path: '/notifications/unread-count',
@@ -54,7 +54,7 @@ export class ApiRoute {
 
   static Template: TemplateRouteType = {
     path: '/templates',
-    get: { pageIndex: 0, pageSize: 20 },
+    get: { pageIndex: 0, pageSize: 30 },
     post: { template: { authorId: '', subject: '' } },
     deletion: { id: '' }
   };
@@ -71,7 +71,8 @@ export class ApiRoute {
       creatorId: '',
       assigneeId: '',
       visibility: 'private'
-    }
+    },
+    deletion: { id: '' }
   };
   static TaskAttachment: TaskAttachmentRouteType = {
     path: '/task/attachments',
