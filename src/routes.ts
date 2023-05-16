@@ -62,6 +62,8 @@ export class ApiRoute {
 
   static Task: TaskRouteType = {
     path: '/tasks',
+    get: { id: '' },
+    getList: { pageIndex: 0, pageSize: 30, userId: '' },
     post: {
       subject: '',
       creatorId: '',
