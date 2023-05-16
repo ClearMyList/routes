@@ -5,7 +5,7 @@ import { RouteType } from './route.type';
 export type TemplateRouteType = RouteType & {
   get: TemplateListGetRequestType;
   post: TemplatePostRequestType;
-  delete: TemplateDeleteRequestType;
+  deletion: TemplateDeleteRequestType;
 };
 
 export type TemplateListGetRequestType = { pageIndex: number; pageSize: number; folder?: TemplateFolderDataType };
