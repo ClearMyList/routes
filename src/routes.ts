@@ -34,10 +34,8 @@ export class ApiRoute {
     path: '/users/preferences',
     get: { username: '' },
     post: {
-      userPreference: {
-        id: '',
-        theme: 'dark'
-      }
+      id: '',
+      theme: 'dark'
     }
   };
   static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } };

@@ -30,8 +30,8 @@ export type UserPreferenceRouteType = RouteType & {
 
 export type UserPreferenceGetRequestType = { username: string };
 
-export type UserPreferenceGetResponseType = BaseResponseType & { userPreference: UserPreferenceDataType };
+export type UserPreferenceGetResponseType = BaseResponseType & { userPreference?: UserPreferenceDataType };
 
-export type UserPreferencePostRequestType = { userPreference: UserPreferenceDataType };
+export type UserPreferencePostRequestType = UserPreferenceDataType;
 
 export type UserPreferencePostResponseType = BaseResponseType & { userPreference: UserPreferenceDataType };
