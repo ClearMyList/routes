@@ -14,7 +14,8 @@ import {
   TaskForkRouteType,
   TaskLikeRouteType,
   TaskRouteType,
-  TaskTagListRouteType
+  TaskTagListRouteType,
+  TaskTimelineRouteType
 } from './type/task.type';
 import { TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
@@ -90,6 +91,7 @@ export class ApiRoute {
     get: { taskIds: [] },
     post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
   };
+  static TaskTimeline: TaskTimelineRouteType = { path: '/tasks/timelines', get: { username: '' } };
 
   static Reminder: ReminderRouteType = { path: '/reminders', get: {} };
 

@@ -68,3 +68,9 @@ export type TaskForkGetRequestType = {
 export type TaskForkGetResponseType = BaseResponseType & {
   forks?: TaskForkDataType[];
 };
+
+export type TaskTimelineRouteType = RouteType & { get: TaskTimelineGetRequestType };
+
+export type TaskTimelineGetRequestType = { username: string };
+
+export type TaskTimelineGetResponseType = BaseResponseType & { timeline: TaskDataType[] };
