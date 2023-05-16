@@ -1,4 +1,5 @@
 import { AccomplishmentRouteType } from './type/accomplishment.type';
+import { SignInRouteType } from './type/authentication.type';
 import {
   NotificationReadAllNotification,
   NotificationReadNotification,
@@ -19,6 +20,8 @@ import { TemplateRouteType, TemplateTagListRouteType } from './type/template.typ
 import { UserAvatarRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
 
 export class ApiRoute {
+  static SignIn: SignInRouteType = { path: '/sign-in', post: { email: '', encryptedPassword: '', reCaptchaToken: '' } };
+
   static User: UserRouteType = { path: '/users', get: { username: '' }, post: { username: '', nickname: '' } };
   static UserProfile: UserProfileRouteType = {
     path: '/user/profile',

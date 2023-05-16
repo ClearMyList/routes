@@ -8,3 +8,4 @@ export * from './type/quota.type';
 export * from './type/plaza.type';
 export * from './type/accomplishment.type';
 export * from './type/reminder.type';
+export * from './type/authentication.type';
