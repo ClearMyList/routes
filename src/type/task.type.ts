@@ -3,24 +3,19 @@ import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
 export type TaskRouteType = RouteType & {
-  get: TaskGetRequestType;
-  getList: TaskListGetRequestType;
+  get: TaskListGetRequestType;
   post: TaskDataType;
 };
 
 export type TaskListGetRequestType = {
-  userId: string;
   pageIndex: number;
   pageSize: number;
+  userId?: string;
   cateogry?: TaskCategoryDataType;
   query?: string;
 };
 
 export type TaskListGetResponseType = BaseResponseType & { tasks: TaskDataType[] };
-
-export type TaskGetRequestType = { id: string | string[] };
-
-export type TaskGetResponseType = BaseResponseType & { task?: TaskDataType };
 
 export type TaskAttachmentRouteType = RouteType & {
   get: TaskAttachmentGetRequestType;
