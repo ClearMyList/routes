@@ -52,7 +52,8 @@ export class ApiRoute {
   static Template: TemplateRouteType = {
     path: '/templates',
     get: { pageIndex: 0, pageSize: 20 },
-    post: { template: { authorId: '', subject: '' } }
+    post: { template: { authorId: '', subject: '' } },
+    delete: { id: '' }
   };
   static TemplateTag: TemplateTagListRouteType = {
     path: '/templates/tags',
