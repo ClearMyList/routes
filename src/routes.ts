@@ -13,6 +13,7 @@ import {
   TaskAttachmentRouteType,
   TaskForkRouteType,
   TaskLikeRouteType,
+  TaskProgressRouteType,
   TaskRouteType,
   TaskTagListRouteType,
   TaskTimelineRouteType
@@ -92,6 +93,10 @@ export class ApiRoute {
     post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
   };
   static TaskTimeline: TaskTimelineRouteType = { path: '/tasks/timelines', get: { username: '' } };
+  static TaskProgress: TaskProgressRouteType = {
+    path: '/tasks/progress',
+    get: { afterDate: new Date(), beforeDate: new Date() }
+  };
 
   static Reminder: ReminderRouteType = { path: '/reminders', get: {} };
 

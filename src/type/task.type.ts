@@ -1,4 +1,10 @@
-import { TaskCategoryDataType, TaskDataType, TaskForkDataType, TaskLikeDataType } from '@clearmylist/data-types';
+import {
+  TaskCategoryDataType,
+  TaskDataType,
+  TaskForkDataType,
+  TaskLikeDataType,
+  TaskProgressDataType
+} from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -74,3 +80,9 @@ export type TaskTimelineRouteType = RouteType & { get: TaskTimelineGetRequestTyp
 export type TaskTimelineGetRequestType = { username: string };
 
 export type TaskTimelineGetResponseType = BaseResponseType & { timeline: TaskDataType[] };
+
+export type TaskProgressRouteType = RouteType & { get: TaskProgressGetRequestType };
+
+export type TaskProgressGetRequestType = { afterDate: Date; beforeDate: Date };
+
+export type TaskProgressGetResponseType = BaseResponseType & { progress: TaskProgressDataType };
