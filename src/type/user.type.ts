@@ -1,4 +1,4 @@
-import { UserPreferenceDataType } from '@clearmylist/data-types';
+import { UserPreferenceDataType, UserProfileDataType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -6,20 +6,18 @@ export type UserRouteType = RouteType & { get: { username: string } } & {
   post: { username: string; nickname?: string };
 };
 
-export type UserProfileRouteType = RouteType & { get: { username: string } } & {
-  post: {
-    id?: string;
-    userId: string;
-    location?: string;
-    occupation?: string;
-    about?: string;
-    twitterUsername?: string;
-    facebookUsername?: string;
-    linkedInUsername?: string;
-    instagramUsername?: string;
-    website?: string;
-  };
+export type UserProfileRouteType = RouteType & {
+  get: UserProfileGetRequestType;
+  post: UserProfilePostRequestType;
 };
+
+export type UserProfileGetRequestType = { username: string };
+
+export type UserProfileGetResponseType = BaseResponseType & { userProfile?: UserProfileDataType };
+
+export type UserProfilePostRequestType = UserProfileDataType;
+
+export type UserProfilePostResponseType = BaseResponseType & { userProfile: UserProfileDataType };
 
 export type UserAvatarRouteType = RouteType & { [key in 'get' | 'delete']: { username: string } };
 

@@ -27,9 +27,9 @@ export class ApiRoute {
 
   static User: UserRouteType = { path: '/users', get: { username: '' }, post: { username: '', nickname: '' } };
   static UserProfile: UserProfileRouteType = {
-    path: '/user/profile',
+    path: '/users/profiles',
     get: { username: '' },
-    post: { userId: '' }
+    post: { id: '', userId: '' }
   };
   static UserPreference: UserPreferenceRouteType = {
     path: '/users/preferences',
