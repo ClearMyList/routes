@@ -108,7 +108,7 @@ export class ApiRoute {
     deletion: { id: '' }
   };
   static TaskAttachment: TaskAttachmentRouteType = {
-    path: '/task/attachments',
+    path: '/tasks/attachments',
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
   };

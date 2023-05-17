@@ -30,12 +30,14 @@ export type TaskDeleteResponseType = BaseResponseType;
 
 export type TaskAttachmentRouteType = RouteType & {
   get: TaskAttachmentGetRequestType;
-  deletion: TaskAttachmentDeletionRequestType;
+  deletion: TaskAttachmentDeleteRequestType;
 };
 
 export type TaskAttachmentGetRequestType = { taskId?: string; storageFilename?: string; isDownload?: boolean };
 
-export type TaskAttachmentDeletionRequestType = { attachmentId: string; storageFilename: string };
+export type TaskAttachmentDeleteRequestType = { [key in 'attachmentId' | 'storageFilename']: string };
+
+export type TaskAttachmentDeleteResponseType = BaseResponseType;
 
 export type TaskTagListRouteType = RouteType & { get: TaskTagListGetRequestType };
 
@@ -83,7 +85,7 @@ export type TaskTimelineGetResponseType = BaseResponseType & { timeline: TaskDat
 
 export type TaskProgressRouteType = RouteType & { get: TaskProgressGetRequestType };
 
-export type TaskProgressGetRequestType = { afterDate: Date; beforeDate: Date };
+export type TaskProgressGetRequestType = { [key in 'afterDate' | 'beforeDate']: Date };
 
 export type TaskProgressGetResponseType = BaseResponseType & { progress: TaskProgressDataType };
 
