@@ -9,3 +9,9 @@ export type SignInRequestType = { email: string; encryptedPassword: string; reCa
 export type SignInResponseType = BaseResponseType & {
   user?: AuthUserDataType;
 };
+
+export type EmailVerificationRouteType = RouteType & { post: EmailVerificationPostRequestType };
+
+export type EmailVerificationPostRequestType = { email: string; verificationCode: string };
+
+export type EmailVerificationResponseType = BaseResponseType & { verified: boolean };
