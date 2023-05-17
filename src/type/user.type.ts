@@ -33,3 +33,9 @@ export type UserPreferenceGetResponseType = BaseResponseType & { userPreference?
 export type UserPreferencePostRequestType = UserPreferenceDataType;
 
 export type UserPreferencePostResponseType = BaseResponseType & { userPreference: UserPreferenceDataType };
+
+export type UserDeactivateRouteType = RouteType & { post: UserDeactivatePostRequestType };
+
+export type UserDeactivatePostRequestType = { username: string };
+
+export type UserDeactivatePostResponseType = BaseResponseType & { deactivated: boolean };

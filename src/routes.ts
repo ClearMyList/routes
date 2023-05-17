@@ -20,7 +20,13 @@ import {
   TaskTimelineRouteType
 } from './type/task.type';
 import { TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
-import { UserAvatarRouteType, UserPreferenceRouteType, UserProfileRouteType, UserRouteType } from './type/user.type';
+import {
+  UserAvatarRouteType,
+  UserDeactivateRouteType,
+  UserPreferenceRouteType,
+  UserProfileRouteType,
+  UserRouteType
+} from './type/user.type';
 
 export class ApiRoute {
   static SignIn: SignInRouteType = { path: '/sign-in', post: { email: '', encryptedPassword: '', reCaptchaToken: '' } };
@@ -39,7 +45,8 @@ export class ApiRoute {
       theme: 'dark'
     }
   };
-  static UserAvatar: UserAvatarRouteType = { path: '/user/avatars', get: { username: '' }, delete: { username: '' } };
+  static UserAvatar: UserAvatarRouteType = { path: '/users/avatars', get: { username: '' }, delete: { username: '' } };
+  static UserDeactivate: UserDeactivateRouteType = { path: '/users/deactivate', post: { username: '' } };
 
   static Accomplishment: AccomplishmentRouteType = {
     path: '/accomplishments',
