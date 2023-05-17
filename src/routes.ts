@@ -1,5 +1,5 @@
 import { AccomplishmentRouteType } from './type/accomplishment.type';
-import { EmailVerificationRouteType, SignInRouteType } from './type/authentication.type';
+import { EmailVerificationRouteType, SignInRouteType, SignUpRouteType } from './type/authentication.type';
 import {
   NotificationReadAllNotification,
   NotificationReadNotification,
@@ -31,6 +31,10 @@ import {
 
 export class ApiRoute {
   static SignIn: SignInRouteType = { path: '/sign-in', post: { email: '', encryptedPassword: '', reCaptchaToken: '' } };
+  static SignUp: SignUpRouteType = {
+    path: '/sign-up',
+    post: { username: '', email: '', encryptedPassword: '', reCaptchaToken: '' }
+  };
 
   static EmailVerification: EmailVerificationRouteType = {
     path: '/verify-email',

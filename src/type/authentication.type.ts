@@ -1,12 +1,26 @@
-import { AuthUserDataType } from '@clearmylist/data-types';
+import { AuthUserDataType, UserDataType, UserRoleType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
 export type SignInRouteType = RouteType & { post: SignInRequestType };
 
-export type SignInRequestType = { email: string; encryptedPassword: string; reCaptchaToken: string };
+export type SignInRequestType = { [key in 'email' | 'encryptedPassword' | 'reCaptchaToken']: string };
 
 export type SignInResponseType = BaseResponseType & {
+  user?: AuthUserDataType;
+};
+
+export type SignUpRouteType = RouteType & { post: SignUpRequestType };
+
+export type SignUpRequestType = {
+  username: string;
+  email: string;
+  encryptedPassword: string;
+  reCaptchaToken: string;
+  role?: UserRoleType;
+};
+
+export type SignUpResponseType = BaseResponseType & {
   user?: AuthUserDataType;
 };
 

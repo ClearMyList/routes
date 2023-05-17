@@ -1,6 +1,6 @@
 {
   "name": "@clearmylist/routes",
-  "version": "0.8.102",
+  "version": "0.8.107",
   "description": "API routes of https://ClearMyList.io.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
