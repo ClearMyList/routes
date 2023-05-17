@@ -15,6 +15,7 @@ import {
   TaskLikeRouteType,
   TaskProgressRouteType,
   TaskRouteType,
+  TaskStatisticsRouteType,
   TaskTagListRouteType,
   TaskTimelineRouteType
 } from './type/task.type';
@@ -105,6 +106,7 @@ export class ApiRoute {
     path: '/tasks/progress',
     get: { afterDate: new Date(), beforeDate: new Date() }
   };
+  static TaskStatistics: TaskStatisticsRouteType = { path: '/tasks/statistics', get: { username: '' } };
 
   static Reminder: ReminderRouteType = { path: '/reminders', get: {} };
 

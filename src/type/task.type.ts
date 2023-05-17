@@ -86,3 +86,11 @@ export type TaskProgressRouteType = RouteType & { get: TaskProgressGetRequestTyp
 export type TaskProgressGetRequestType = { afterDate: Date; beforeDate: Date };
 
 export type TaskProgressGetResponseType = BaseResponseType & { progress: TaskProgressDataType };
+
+export type TaskStatisticsRouteType = RouteType & { get: TaskStatisticsGetRequestType };
+
+export type TaskStatisticsGetRequestType = { username: string; year?: number };
+
+export type TaskStatisticsGetResponseType = BaseResponseType & {
+  statistics: { _id: string; completedCount: number }[];
+};
