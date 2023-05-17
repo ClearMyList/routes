@@ -39,3 +39,13 @@ export type UserDeactivateRouteType = RouteType & { post: UserDeactivatePostRequ
 export type UserDeactivatePostRequestType = { username: string };
 
 export type UserDeactivatePostResponseType = BaseResponseType & { deactivated: boolean };
+
+export type UserPasswordRouteType = RouteType & { put: UserPasswordPutRequestType };
+
+export type UserPasswordPutRequestType = {
+  username: string;
+  currentEncryptedPassword: string;
+  newEncryptedPassword: string;
+};
+
+export type UserPasswordPutResponseType = BaseResponseType;

@@ -23,6 +23,8 @@ import { TemplateRouteType, TemplateTagListRouteType } from './type/template.typ
 import {
   UserAvatarRouteType,
   UserDeactivateRouteType,
+  UserPasswordPutRequestType,
+  UserPasswordRouteType,
   UserPreferenceRouteType,
   UserProfileRouteType,
   UserRouteType
@@ -47,6 +49,10 @@ export class ApiRoute {
   };
   static UserAvatar: UserAvatarRouteType = { path: '/users/avatars', get: { username: '' }, delete: { username: '' } };
   static UserDeactivate: UserDeactivateRouteType = { path: '/users/deactivate', post: { username: '' } };
+  static UserPassword: UserPasswordRouteType = {
+    path: '/users/change-password',
+    put: { username: '', currentEncryptedPassword: '', newEncryptedPassword: '' }
+  };
 
   static Accomplishment: AccomplishmentRouteType = {
     path: '/accomplishments',
