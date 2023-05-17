@@ -19,7 +19,13 @@ export type UserProfilePostRequestType = UserProfileDataType;
 
 export type UserProfilePostResponseType = BaseResponseType & { userProfile: UserProfileDataType };
 
-export type UserAvatarRouteType = RouteType & { [key in 'get' | 'delete']: { username: string } };
+export type UserAvatarRouteType = RouteType & { deletion: UserAvatarDeletionRequestType };
+
+export type UserAvatarPostResponseType = BaseResponseType & { avatarUrl: string };
+
+export type UserAvatarDeletionRequestType = { username: string };
+
+export type UserAvatarDeletionResponseType = BaseResponseType;
 
 export type UserPreferenceRouteType = RouteType & {
   get: UserPreferenceGetRequestType;

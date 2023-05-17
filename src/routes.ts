@@ -56,7 +56,7 @@ export class ApiRoute {
       theme: 'dark'
     }
   };
-  static UserAvatar: UserAvatarRouteType = { path: '/users/avatars', get: { username: '' }, delete: { username: '' } };
+  static UserAvatar: UserAvatarRouteType = { path: '/users/avatars', deletion: { username: '' } };
   static UserDeactivate: UserDeactivateRouteType = { path: '/users/deactivate', post: { username: '' } };
   static UserPassword: UserPasswordRouteType = {
     path: '/users/change-password',
