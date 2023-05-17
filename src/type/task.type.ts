@@ -94,3 +94,9 @@ export type TaskStatisticsGetRequestType = { username: string; year?: number };
 export type TaskStatisticsGetResponseType = BaseResponseType & {
   statistics: { _id: string; completedCount: number }[];
 };
+
+export type TaskVersionValidationRouteType = RouteType & { get: TaskVersionValidationGetRequestType };
+
+export type TaskVersionValidationGetRequestType = { taskVersions: string; category: TaskCategoryDataType };
+
+export type TaskVersionValidationGetResponseType = BaseResponseType & { diffTasks?: TaskDataType[] };

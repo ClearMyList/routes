@@ -17,7 +17,8 @@ import {
   TaskRouteType,
   TaskStatisticsRouteType,
   TaskTagListRouteType,
-  TaskTimelineRouteType
+  TaskTimelineRouteType,
+  TaskVersionValidationRouteType
 } from './type/task.type';
 import { TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
 import {
@@ -128,6 +129,13 @@ export class ApiRoute {
     get: { afterDate: new Date(), beforeDate: new Date() }
   };
   static TaskStatistics: TaskStatisticsRouteType = { path: '/tasks/statistics', get: { username: '' } };
+  static TaskVersionValidation: TaskVersionValidationRouteType = {
+    path: '/tasks/validate-versions',
+    get: {
+      taskVersions: '',
+      category: 'plan'
+    }
+  };
 
   static Reminder: ReminderRouteType = { path: '/reminders', get: {} };
 
