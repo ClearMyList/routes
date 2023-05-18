@@ -10,7 +10,7 @@ import { RouteType } from './route.type';
 
 export type TaskRouteType = RouteType & {
   get: TaskListGetRequestType;
-  post: TaskDataType;
+  post: TaskPostRequestType;
   deletion: TaskDeleteRequestType;
 };
 
@@ -24,9 +24,19 @@ export type TaskListGetRequestType = {
 
 export type TaskListGetResponseType = BaseResponseType & { tasks: TaskDataType[] };
 
+export type TaskPostRequestType = TaskDataType;
+
+export type TaskPostResponseType = BaseResponseType & { task?: TaskDataType };
+
 export type TaskDeleteRequestType = { id: string };
 
 export type TaskDeleteResponseType = BaseResponseType;
+
+export type TaskCompleteRouteType = RouteType & { post: TaskCompleteRequestType };
+
+export type TaskCompleteRequestType = TaskDataType;
+
+export type TaskCompleteResponseType = BaseResponseType & { tasks: TaskDataType[] };
 
 export type TaskAttachmentRouteType = RouteType & {
   get: TaskAttachmentGetRequestType;

@@ -11,6 +11,7 @@ import { QuotaRouteType } from './type/quota.type';
 import { ReminderRouteType } from './type/reminder.type';
 import {
   TaskAttachmentRouteType,
+  TaskCompleteRouteType,
   TaskForkRouteType,
   TaskLikeRouteType,
   TaskProgressRouteType,
@@ -107,6 +108,7 @@ export class ApiRoute {
     },
     deletion: { id: '' }
   };
+  static TaskComplete: TaskCompleteRouteType = { path: '/tasks/complete', post: { id: '', subject: '' } };
   static TaskAttachment: TaskAttachmentRouteType = {
     path: '/tasks/attachments',
     get: {},
