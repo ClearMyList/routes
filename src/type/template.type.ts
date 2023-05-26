@@ -3,14 +3,23 @@ import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
 export type TemplateRouteType = RouteType & {
-  get: TemplateListGetRequestType;
+  get: TemplateGetRequestType;
   post: TemplatePostRequestType;
   deletion: TemplateDeleteRequestType;
 };
 
-export type TemplateListGetRequestType = { pageIndex: number; pageSize: number; folder?: TemplateFolderDataType };
+export type TemplateGetRequestType = {
+  pageIndex: number;
+  pageSize: number;
+  folder?: TemplateFolderDataType;
+  id?: string;
+};
 
-export type TemplateListGetResponseType = BaseResponseType & { templates: TemplateDataType[] };
+export type TemplateGetResponseType = BaseResponseType & { templates: TemplateDataType[] };
+
+export type TemplateGetByIdRequestType = { id: string };
+
+export type TemplateGetByIdResponseType = BaseResponseType & { template?: TemplateDataType };
 
 export type TemplatePostRequestType = { template: TemplateDataType };
 
