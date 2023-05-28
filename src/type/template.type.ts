@@ -12,7 +12,7 @@ export type TemplateGetRequestType = {
   pageIndex: number;
   pageSize: number;
   folder?: TemplateFolderDataType;
-  id?: string;
+  id?: string | string[];
 };
 
 export type TemplateGetResponseType = BaseResponseType & { templates: TemplateDataType[] };
