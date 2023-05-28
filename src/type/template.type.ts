@@ -1,4 +1,4 @@
-import { TemplateDataType, TemplateFolderDataType, TemplateTagDataType } from '@clearmylist/data-types';
+import { TaskDataType, TemplateDataType, TemplateFolderDataType, TemplateTagDataType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -34,3 +34,9 @@ export type TemplateTagListGetResponseType = BaseResponseType & { tags?: Templat
 export type TemplateDeleteRequestType = { id: string };
 
 export type TemplateDeleteResponseType = BaseResponseType;
+
+export type TemplateApplyRouteType = RouteType & { post: TemplateApplyPostRequestType };
+
+export type TemplateApplyPostRequestType = { templateId: string; firstTaskRemindAt?: Date };
+
+export type TemplateApplyPostResponseType = BaseResponseType & { task?: TaskDataType };

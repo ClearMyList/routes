@@ -21,7 +21,7 @@ import {
   TaskTimelineRouteType,
   TaskVersionValidationRouteType
 } from './type/task.type';
-import { TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
+import { TemplateApplyRouteType, TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
 import {
   UserAvatarRouteType,
   UserDeactivateRouteType,
@@ -95,6 +95,10 @@ export class ApiRoute {
   static TemplateTag: TemplateTagListRouteType = {
     path: '/templates/tags',
     get: { templateIds: [] }
+  };
+  static TemplateApply: TemplateApplyRouteType = {
+    path: '/templates/apply',
+    post: { templateId: '' }
   };
 
   static Task: TaskRouteType = {
