@@ -109,6 +109,10 @@ export type TaskStatisticsGetResponseType = BaseResponseType & {
 
 export type TaskVersionValidationRouteType = RouteType & { get: TaskVersionValidationGetRequestType };
 
-export type TaskVersionValidationGetRequestType = { taskVersions: string; category: TaskCategoryDataType };
+export type TaskVersionValidationGetRequestType = {
+  assigneeId: string;
+  taskVersions: string;
+  category: TaskCategoryDataType;
+};
 
 export type TaskVersionValidationGetResponseType = BaseResponseType & { diffTasks?: TaskDataType[] };

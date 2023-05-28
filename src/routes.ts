@@ -98,7 +98,7 @@ export class ApiRoute {
   };
   static TemplateApply: TemplateApplyRouteType = {
     path: '/templates/apply',
-    post: { templateId: '' }
+    post: { templateId: '', firstDate: new Date() }
   };
 
   static Task: TaskRouteType = {
@@ -138,6 +138,7 @@ export class ApiRoute {
   static TaskVersionValidation: TaskVersionValidationRouteType = {
     path: '/tasks/validate-versions',
     get: {
+      assigneeId: '',
       taskVersions: '',
       category: 'plan'
     }
