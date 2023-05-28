@@ -39,4 +39,4 @@ export type TemplateApplyRouteType = RouteType & { post: TemplateApplyPostReques
 
 export type TemplateApplyPostRequestType = { templateId: string; firstTaskRemindAt?: Date };
 
-export type TemplateApplyPostResponseType = BaseResponseType & { task?: TaskDataType };
+export type TemplateApplyPostResponseType = BaseResponseType & { tasks?: TaskDataType[] };
