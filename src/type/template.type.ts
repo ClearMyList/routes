@@ -1,4 +1,10 @@
-import { TaskDataType, TemplateDataType, TemplateFolderDataType, TemplateTagDataType } from '@clearmylist/data-types';
+import {
+  RemindAtDataType,
+  TaskDataType,
+  TemplateDataType,
+  TemplateFolderDataType,
+  TemplateTagDataType
+} from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -39,7 +45,7 @@ export type TemplateApplyRouteType = RouteType & { post: TemplateApplyPostReques
 
 export type TemplateApplyPostRequestType = {
   templateId: string;
-  firstDate: { year: number; month: number; day: number };
+  firstDate: RemindAtDataType;
 };
 
 export type TemplateApplyPostResponseType = BaseResponseType & { tasks?: TaskDataType[] };

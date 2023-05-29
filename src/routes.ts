@@ -98,7 +98,7 @@ export class ApiRoute {
   };
   static TemplateApply: TemplateApplyRouteType = {
     path: '/templates/apply',
-    post: { templateId: '', firstDate: { year: 1970, month: 0, day: 0 } }
+    post: { templateId: '', firstDate: { year: 1970, month: 0, date: 0, hour: 9, minute: 0 } }
   };
 
   static Task: TaskRouteType = {
