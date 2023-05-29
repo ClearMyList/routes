@@ -1,4 +1,5 @@
 import {
+  DateDataType,
   TaskCategoryDataType,
   TaskDataType,
   TaskForkDataType,
@@ -95,7 +96,7 @@ export type TaskTimelineGetResponseType = BaseResponseType & { timeline: TaskDat
 
 export type TaskProgressRouteType = RouteType & { get: TaskProgressGetRequestType };
 
-export type TaskProgressGetRequestType = { [key in 'afterDate' | 'beforeDate']: Date };
+export type TaskProgressGetRequestType = { [key in 'afterDate' | 'beforeDate']: DateDataType };
 
 export type TaskProgressGetResponseType = BaseResponseType & { progress: TaskProgressDataType };
 

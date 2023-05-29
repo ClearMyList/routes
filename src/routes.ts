@@ -132,7 +132,7 @@ export class ApiRoute {
   static TaskTimeline: TaskTimelineRouteType = { path: '/tasks/timelines', get: { username: '' } };
   static TaskProgress: TaskProgressRouteType = {
     path: '/tasks/progress',
-    get: { afterDate: new Date(), beforeDate: new Date() }
+    get: { afterDate: { year: 1970, month: 0, date: 1 }, beforeDate: { year: 1970, month: 0, date: 1 } }
   };
   static TaskStatistics: TaskStatisticsRouteType = { path: '/tasks/statistics', get: { username: '' } };
   static TaskVersionValidation: TaskVersionValidationRouteType = {
