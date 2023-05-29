@@ -37,6 +37,9 @@ export type TemplateDeleteResponseType = BaseResponseType;
 
 export type TemplateApplyRouteType = RouteType & { post: TemplateApplyPostRequestType };
 
-export type TemplateApplyPostRequestType = { templateId: string; firstDate: Date };
+export type TemplateApplyPostRequestType = {
+  templateId: string;
+  firstDate: { year: number; month: number; day: number };
+};
 
 export type TemplateApplyPostResponseType = BaseResponseType & { tasks?: TaskDataType[] };
