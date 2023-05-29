@@ -37,7 +37,7 @@
     }
   },
   "dependencies": {
-    "@clearmylist/data-types": "^0.8.69",
+    "@clearmylist/data-types": "^0.8.70",
     "eslint": "8.41.0",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.8.0",
