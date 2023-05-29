@@ -1,5 +1,5 @@
 import {
-  RemindAtDataType,
+  DateDataType,
   TaskDataType,
   TemplateDataType,
   TemplateFolderDataType,
@@ -45,7 +45,7 @@ export type TemplateApplyRouteType = RouteType & { post: TemplateApplyPostReques
 
 export type TemplateApplyPostRequestType = {
   templateId: string;
-  firstDate: RemindAtDataType;
+  firstDate: DateDataType;
 };
 
 export type TemplateApplyPostResponseType = BaseResponseType & { tasks?: TaskDataType[] };
