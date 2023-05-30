@@ -9,6 +9,7 @@ import {
 import { PlazaActivityListRouteType } from './type/plaza.type';
 import { QuotaRouteType } from './type/quota.type';
 import { ReminderRouteType } from './type/reminder.type';
+import { TextTagRouteType } from './type/tag.type';
 import {
   TaskAttachmentRouteType,
   TaskCompleteRouteType,
@@ -108,6 +109,9 @@ export class ApiRoute {
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
   };
+  /**
+   * @deprecated
+   */
   static TaskTag: TaskTagListRouteType = { path: '/tasks/tags', get: { taskIds: [] } };
   static TaskLike: TaskLikeRouteType = {
     path: '/tasks/likes',
@@ -140,6 +144,9 @@ export class ApiRoute {
     post: { template: { authorId: '', subject: '' } },
     deletion: { id: '' }
   };
+  /**
+   * @deprecated
+   */
   static TemplateTag: TemplateTagListRouteType = {
     path: '/templates/tags',
     get: { templateIds: [] }
@@ -165,4 +172,6 @@ export class ApiRoute {
     path: '/plaza-activities',
     get: { username: '', pageIndex: 0, pageSize: 30 }
   };
+
+  static TextTag: TextTagRouteType = { path: '/text-tags', get: { text: '' } };
 }

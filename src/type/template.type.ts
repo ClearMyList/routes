@@ -31,10 +31,19 @@ export type TemplatePostRequestType = { template: TemplateDataType };
 
 export type TemplatePostResponseType = BaseResponseType & { template: TemplateDataType };
 
+/**
+ * @deprecated
+ */
 export type TemplateTagListRouteType = RouteType & { get: TemplateTagListGetRequestType };
 
+/**
+ * @deprecated
+ */
 export type TemplateTagListGetRequestType = { templateIds: string[] };
 
+/**
+ * @deprecated
+ */
 export type TemplateTagListGetResponseType = BaseResponseType & { tags?: TemplateTagDataType[] };
 
 export type TemplateDeleteRequestType = { id: string };

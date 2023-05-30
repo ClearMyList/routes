@@ -50,12 +50,21 @@ export type TaskAttachmentDeleteRequestType = { [key in 'attachmentId' | 'storag
 
 export type TaskAttachmentDeleteResponseType = BaseResponseType;
 
+/**
+ * @deprecated
+ */
 export type TaskTagListRouteType = RouteType & { get: TaskTagListGetRequestType };
 
+/**
+ * @deprecated
+ */
 export type TaskTagListGetRequestType = {
   taskIds: string[];
 };
 
+/**
+ * @deprecated
+ */
 export type TaskTagListGetResponseType = BaseResponseType & {
   tags?: { tag: string; taskIds: string[] }[];
 };
