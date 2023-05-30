@@ -49,3 +49,9 @@ export type TemplateApplyPostRequestType = {
 };
 
 export type TemplateApplyPostResponseType = BaseResponseType & { tasks?: TaskDataType[] };
+
+export type TemplateAppliedUserRouteType = RouteType & { get: TemplateAppliedUserGetRequestType };
+
+export type TemplateAppliedUserGetRequestType = { templateIds: string[] };
+
+export type TemplateAppliedUserGetResponseType = BaseResponseType & { templateId: string; users: string[] };

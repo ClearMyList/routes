@@ -21,7 +21,12 @@ import {
   TaskTimelineRouteType,
   TaskVersionValidationRouteType
 } from './type/task.type';
-import { TemplateApplyRouteType, TemplateRouteType, TemplateTagListRouteType } from './type/template.type';
+import {
+  TemplateAppliedUserRouteType,
+  TemplateApplyRouteType,
+  TemplateRouteType,
+  TemplateTagListRouteType
+} from './type/template.type';
 import {
   UserAvatarRouteType,
   UserDeactivateRouteType,
@@ -86,21 +91,6 @@ export class ApiRoute {
     post: { subscriberId: '' }
   };
 
-  static Template: TemplateRouteType = {
-    path: '/templates',
-    get: { pageIndex: 0, pageSize: 30 },
-    post: { template: { authorId: '', subject: '' } },
-    deletion: { id: '' }
-  };
-  static TemplateTag: TemplateTagListRouteType = {
-    path: '/templates/tags',
-    get: { templateIds: [] }
-  };
-  static TemplateApply: TemplateApplyRouteType = {
-    path: '/templates/apply',
-    post: { templateId: '', firstDate: { year: 1970, month: 0, date: 0 } }
-  };
-
   static Task: TaskRouteType = {
     path: '/tasks',
     get: { pageIndex: 0, pageSize: 30 },
@@ -142,6 +132,25 @@ export class ApiRoute {
       taskVersions: '',
       category: 'plan'
     }
+  };
+
+  static Template: TemplateRouteType = {
+    path: '/templates',
+    get: { pageIndex: 0, pageSize: 30 },
+    post: { template: { authorId: '', subject: '' } },
+    deletion: { id: '' }
+  };
+  static TemplateTag: TemplateTagListRouteType = {
+    path: '/templates/tags',
+    get: { templateIds: [] }
+  };
+  static TemplateApply: TemplateApplyRouteType = {
+    path: '/templates/apply',
+    post: { templateId: '', firstDate: { year: 1970, month: 0, date: 0 } }
+  };
+  static TemplateAppliedUser: TemplateAppliedUserRouteType = {
+    path: '/templates/applied-users',
+    get: { templateIds: [] }
   };
 
   static Reminder: ReminderRouteType = { path: '/reminders', get: {} };
