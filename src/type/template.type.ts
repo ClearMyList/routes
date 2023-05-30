@@ -1,10 +1,4 @@
-import {
-  DateDataType,
-  TaskDataType,
-  TemplateDataType,
-  TemplateFolderDataType,
-  TemplateTagDataType
-} from '@clearmylist/data-types';
+import { DateDataType, TaskDataType, TemplateDataType, TemplateFolderDataType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -30,21 +24,6 @@ export type TemplateGetByIdResponseType = BaseResponseType & { template?: Templa
 export type TemplatePostRequestType = { template: TemplateDataType };
 
 export type TemplatePostResponseType = BaseResponseType & { template: TemplateDataType };
-
-/**
- * @deprecated
- */
-export type TemplateTagListRouteType = RouteType & { get: TemplateTagListGetRequestType };
-
-/**
- * @deprecated
- */
-export type TemplateTagListGetRequestType = { templateIds: string[] };
-
-/**
- * @deprecated
- */
-export type TemplateTagListGetResponseType = BaseResponseType & { tags?: TemplateTagDataType[] };
 
 export type TemplateDeleteRequestType = { id: string };
 

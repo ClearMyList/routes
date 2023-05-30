@@ -22,12 +22,7 @@ import {
   TaskTimelineRouteType,
   TaskVersionValidationRouteType
 } from './type/task.type';
-import {
-  TemplateAppliedUserRouteType,
-  TemplateApplyRouteType,
-  TemplateRouteType,
-  TemplateTagListRouteType
-} from './type/template.type';
+import { TemplateAppliedUserRouteType, TemplateApplyRouteType, TemplateRouteType } from './type/template.type';
 import {
   UserAvatarRouteType,
   UserDeactivateRouteType,
@@ -144,13 +139,7 @@ export class ApiRoute {
     post: { template: { authorId: '', subject: '' } },
     deletion: { id: '' }
   };
-  /**
-   * @deprecated
-   */
-  static TemplateTag: TemplateTagListRouteType = {
-    path: '/templates/tags',
-    get: { templateIds: [] }
-  };
+
   static TemplateApply: TemplateApplyRouteType = {
     path: '/templates/apply',
     post: { templateId: '', firstDate: { year: 1970, month: 0, date: 0 } }
