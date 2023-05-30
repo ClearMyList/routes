@@ -18,7 +18,6 @@ import {
   TaskProgressRouteType,
   TaskRouteType,
   TaskStatisticsRouteType,
-  TaskTagListRouteType,
   TaskTimelineRouteType,
   TaskVersionValidationRouteType
 } from './type/task.type';
@@ -104,10 +103,6 @@ export class ApiRoute {
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
   };
-  /**
-   * @deprecated
-   */
-  static TaskTag: TaskTagListRouteType = { path: '/tasks/tags', get: { taskIds: [] } };
   static TaskLike: TaskLikeRouteType = {
     path: '/tasks/likes',
     get: { taskIds: [] },
