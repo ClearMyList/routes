@@ -54,4 +54,6 @@ export type TemplateAppliedUserRouteType = RouteType & { get: TemplateAppliedUse
 
 export type TemplateAppliedUserGetRequestType = { templateIds: string[] };
 
-export type TemplateAppliedUserGetResponseType = BaseResponseType & { templateId: string; users: string[] };
+export type TemplateAppliedUserGetResponseType = BaseResponseType & {
+  templateUsers?: { templateId?: string; users?: string[] }[];
+};
