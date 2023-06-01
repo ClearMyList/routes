@@ -44,7 +44,13 @@ export type TaskAttachmentRouteType = RouteType & {
   deletion: TaskAttachmentDeleteRequestType;
 };
 
-export type TaskAttachmentGetRequestType = { taskId?: string; storageFilename?: string; isDownload?: boolean };
+export type TaskAttachmentGetRequestType = { taskId?: string; storageFilename?: string };
+
+export type TaskAttachmentDownloadRouteType = RouteType & {
+  get: TaskAttachmentDownloadRequestType;
+};
+
+export type TaskAttachmentDownloadRequestType = { storageFilename?: string };
 
 export type TaskAttachmentDeleteRequestType = { [key in 'attachmentId' | 'storageFilename']: string };
 

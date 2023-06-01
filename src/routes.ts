@@ -11,6 +11,7 @@ import { QuotaRouteType } from './type/quota.type';
 import { ReminderRouteType } from './type/reminder.type';
 import { TextTagRouteType } from './type/tag.type';
 import {
+  TaskAttachmentDownloadRouteType,
   TaskAttachmentRouteType,
   TaskCompleteRouteType,
   TaskForkRouteType,
@@ -102,6 +103,10 @@ export class ApiRoute {
     path: '/tasks/attachments',
     get: {},
     deletion: { attachmentId: '', storageFilename: '' }
+  };
+  static TaskAttachmentDownload: TaskAttachmentDownloadRouteType = {
+    path: '/tasks/attachments/download',
+    get: { storageFilename: '' }
   };
   static TaskLike: TaskLikeRouteType = {
     path: '/tasks/likes',
