@@ -2,11 +2,11 @@ import { NotificationDataType, UserDataType, UserProfileDataType } from '@clearm
 import { RouteType } from './route.type';
 import { BaseResponseType } from './base.type';
 
-export type NotificationRouteType = RouteType & { get: NotificationGetListRequestType };
+export type NotificationRouteType = RouteType & { get: NotificationListGetRequestType };
 
-export type NotificationGetListRequestType = { subscriberId: string; pageIndex: number; pageSize: number };
+export type NotificationListGetRequestType = { subscriberId: string; pageIndex: number; pageSize: number };
 
-export type NotificationGetListResponseType = BaseResponseType & {
+export type NotificationListGetResponseType = BaseResponseType & {
   notifications: (NotificationDataType & { publisher?: UserDataType; publisherProfile?: UserProfileDataType })[];
 };
 
