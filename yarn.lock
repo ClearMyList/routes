@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@clearmylist/data-types@^0.8.64":
-  version "0.8.64"
-  resolved "https://registry.yarnpkg.com/@clearmylist/data-types/-/data-types-0.8.64.tgz#ececd2a632904167bfc6ae8626b067f064874489"
-  integrity sha512-QXY2AvzkEjXDFLdVFsNx2m/T8dGmEhCzLE5omdiEsJhZva9Dho3eKHdJtwB+H1wc48yvKT3M793Mp41L6LItDA==
+"@clearmylist/data-types@^0.8.76":
+  version "0.8.77"
+  resolved "https://registry.yarnpkg.com/@clearmylist/data-types/-/data-types-0.8.77.tgz#dc305d31810bea25fba2a9c7413d06412a75d6df"
+  integrity sha512-KQ2egd1xleK5IcxCib8AYucOnm51LpFuMD+vXZbl1TIdpOV4VhWaQLhWH7XaEoGF7q1nKmDKFq9DWPem+f9D+g==
   dependencies:
     eslint "8.40.0"
     eslint-config-airbnb-typescript "17.0.0"
