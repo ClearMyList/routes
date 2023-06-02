@@ -64,7 +64,11 @@ export class ApiRoute {
       }
     }
   };
-  static UserAvatar: UserAvatarRouteType = { path: '/users/avatars', deletion: { username: '' } };
+  static UserAvatar: UserAvatarRouteType = {
+    path: '/users/avatars',
+    post: { username: '' },
+    deletion: { username: '' }
+  };
   static UserDeactivate: UserDeactivateRouteType = { path: '/users/deactivate', post: { username: '' } };
   static UserPassword: UserPasswordRouteType = {
     path: '/users/change-password',
