@@ -1,5 +1,6 @@
 import {
   DateDataType,
+  TaskAttachmentDataType,
   TaskCategoryType,
   TaskDataType,
   TaskForkDataType,
@@ -61,6 +62,10 @@ export interface TaskAttachmentRouteType extends BaseRouteType {
 export interface TaskAttachmentGetRequestType extends BaseRequestType {
   taskId?: string;
   storageFilename?: string;
+}
+
+export interface TaskAttachmentGetResponseType extends BaseResponseType {
+  taskAttachments?: TaskAttachmentDataType[];
 }
 
 export interface TaskAttachmentDownloadRouteType extends BaseRouteType {
