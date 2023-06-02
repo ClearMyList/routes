@@ -85,6 +85,10 @@ export interface TaskAttachmentDownloadRequestType extends BaseRequestType {
   storageFilename?: string;
 }
 
+export interface TaskAttachmentDownloadResponseType extends BaseResponseType {
+  taskAttachment?: { [key: string]: any };
+}
+
 export interface TaskAttachmentDeleteRequestType extends BaseRequestType {
   attachmentId: string;
   storageFilename: string;
