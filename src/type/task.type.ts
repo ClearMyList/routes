@@ -56,6 +56,7 @@ export interface TaskCompleteResponseType extends BaseResponseType {
 
 export interface TaskAttachmentRouteType extends BaseRouteType {
   get: TaskAttachmentGetRequestType;
+  post: TaskAttachmentPostRequestType;
   deletion: TaskAttachmentDeleteRequestType;
 }
 
@@ -66,6 +67,14 @@ export interface TaskAttachmentGetRequestType extends BaseRequestType {
 
 export interface TaskAttachmentGetResponseType extends BaseResponseType {
   taskAttachments?: TaskAttachmentDataType[];
+}
+
+export interface TaskAttachmentPostRequestType extends BaseRequestType {
+  taskId: string;
+}
+
+export interface TaskAttachmentPostResponseType extends BaseResponseType {
+  taskAttachment?: TaskAttachmentDataType;
 }
 
 export interface TaskAttachmentDownloadRouteType extends BaseRouteType {
