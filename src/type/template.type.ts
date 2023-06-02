@@ -1,4 +1,4 @@
-import { DateDataType, TaskDataType, TemplateDataType, TemplateFolderDataType } from '@clearmylist/data-types';
+import { DateDataType, TaskDataType, TemplateDataType, TemplateFolderType } from '@clearmylist/data-types';
 import { BaseResponseType } from './base.type';
 import { RouteType } from './route.type';
 
@@ -11,7 +11,7 @@ export type TemplateRouteType = RouteType & {
 export type TemplateGetRequestType = {
   pageIndex: number;
   pageSize: number;
-  folder?: TemplateFolderDataType;
+  folder?: TemplateFolderType;
   id?: string | string[];
 };
 

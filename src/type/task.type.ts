@@ -1,6 +1,6 @@
 import {
   DateDataType,
-  TaskCategoryDataType,
+  TaskCategoryType,
   TaskDataType,
   TaskForkDataType,
   TaskLikeDataType,
@@ -19,7 +19,7 @@ export type TaskListGetRequestType = {
   pageIndex: number;
   pageSize: number;
   userId?: string;
-  cateogry?: TaskCategoryDataType;
+  cateogry?: TaskCategoryType;
   query?: string;
 };
 
@@ -128,7 +128,7 @@ export type TaskVersionValidationRouteType = RouteType & { get: TaskVersionValid
 export type TaskVersionValidationGetRequestType = {
   assigneeId: string;
   taskVersions: string;
-  category: TaskCategoryDataType;
+  category: TaskCategoryType;
 };
 
 export type TaskVersionValidationGetResponseType = BaseResponseType & { diffTasks?: TaskDataType[] };
