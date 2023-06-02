@@ -1,47 +1,67 @@
 import { DateDataType, TaskDataType, TemplateDataType, TemplateFolderType } from '@clearmylist/data-types';
-import { BaseResponseType } from './base.type';
-import { RouteType } from './route.type';
+import { BaseRequestType, BaseResponseType } from './base.type';
+import { BaseRouteType } from './base.type';
 
-export type TemplateRouteType = RouteType & {
+export interface TemplateRouteType extends BaseRouteType {
   get: TemplateGetRequestType;
   post: TemplatePostRequestType;
   deletion: TemplateDeleteRequestType;
-};
+}
 
-export type TemplateGetRequestType = {
+export interface TemplateGetRequestType extends BaseRequestType {
   pageIndex: number;
   pageSize: number;
   folder?: TemplateFolderType;
   id?: string | string[];
-};
+}
 
-export type TemplateGetResponseType = BaseResponseType & { templates: TemplateDataType[] };
+export interface TemplateGetResponseType extends BaseResponseType {
+  templates: TemplateDataType[];
+}
 
-export type TemplateGetByIdRequestType = { id: string };
+export interface TemplateGetByIdRequestType extends BaseRequestType {
+  id: string;
+}
 
-export type TemplateGetByIdResponseType = BaseResponseType & { template?: TemplateDataType };
+export interface TemplateGetByIdResponseType extends BaseResponseType {
+  template?: TemplateDataType;
+}
 
-export type TemplatePostRequestType = { template: TemplateDataType };
+export interface TemplatePostRequestType extends BaseRequestType {
+  template: TemplateDataType;
+}
 
-export type TemplatePostResponseType = BaseResponseType & { template: TemplateDataType };
+export interface TemplatePostResponseType extends BaseResponseType {
+  template: TemplateDataType;
+}
 
-export type TemplateDeleteRequestType = { id: string };
+export interface TemplateDeleteRequestType extends BaseRequestType {
+  id: string;
+}
 
-export type TemplateDeleteResponseType = BaseResponseType;
+export interface TemplateDeleteResponseType extends BaseResponseType {}
 
-export type TemplateApplyRouteType = RouteType & { post: TemplateApplyPostRequestType };
+export interface TemplateApplyRouteType extends BaseRouteType {
+  post: TemplateApplyPostRequestType;
+}
 
-export type TemplateApplyPostRequestType = {
+export interface TemplateApplyPostRequestType extends BaseRequestType {
   templateId: string;
   firstDate: DateDataType;
-};
+}
 
-export type TemplateApplyPostResponseType = BaseResponseType & { tasks?: TaskDataType[] };
+export interface TemplateApplyPostResponseType extends BaseResponseType {
+  tasks?: TaskDataType[];
+}
 
-export type TemplateAppliedUserRouteType = RouteType & { get: TemplateAppliedUserGetRequestType };
+export interface TemplateAppliedUserRouteType extends BaseRouteType {
+  get: TemplateAppliedUserGetRequestType;
+}
 
-export type TemplateAppliedUserGetRequestType = { templateIds: string[] };
+export interface TemplateAppliedUserGetRequestType extends BaseRequestType {
+  templateIds: string[];
+}
 
-export type TemplateAppliedUserGetResponseType = BaseResponseType & {
+export interface TemplateAppliedUserGetResponseType extends BaseResponseType {
   templateUsers?: { templateId?: string; users?: string[] }[];
-};
+}

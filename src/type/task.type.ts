@@ -6,129 +6,170 @@ import {
   TaskLikeDataType,
   TaskProgressDataType
 } from '@clearmylist/data-types';
-import { BaseResponseType } from './base.type';
-import { RouteType } from './route.type';
+import { BaseRequestType, BaseResponseType } from './base.type';
+import { BaseRouteType } from './base.type';
 
-export type TaskRouteType = RouteType & {
+export interface TaskRouteType extends BaseRouteType {
   get: TaskListGetRequestType;
   post: TaskPostRequestType;
   deletion: TaskDeleteRequestType;
-};
+}
 
-export type TaskListGetRequestType = {
+export interface TaskListGetRequestType extends BaseRequestType {
   pageIndex: number;
   pageSize: number;
   userId?: string;
   cateogry?: TaskCategoryType;
   query?: string;
-};
+}
 
-export type TaskListGetResponseType = BaseResponseType & { tasks: TaskDataType[] };
+export interface TaskListGetResponseType extends BaseResponseType {
+  tasks: TaskDataType[];
+}
 
-export type TaskPostRequestType = TaskDataType;
+export interface TaskPostRequestType extends BaseRequestType {
+  task: TaskDataType;
+}
 
-export type TaskPostResponseType = BaseResponseType & { task?: TaskDataType };
+export interface TaskPostResponseType extends BaseResponseType {
+  task?: TaskDataType;
+}
 
-export type TaskDeleteRequestType = { id: string };
+export interface TaskDeleteRequestType extends BaseRequestType {
+  id: string;
+}
 
-export type TaskDeleteResponseType = BaseResponseType;
+export interface TaskDeleteResponseType extends BaseResponseType {}
 
-export type TaskCompleteRouteType = RouteType & { post: TaskCompleteRequestType };
+export interface TaskCompleteRouteType extends BaseRouteType {
+  post: TaskCompleteRequestType;
+}
 
-export type TaskCompleteRequestType = TaskDataType;
+export interface TaskCompleteRequestType extends BaseRequestType {
+  task: TaskDataType;
+}
 
-export type TaskCompleteResponseType = BaseResponseType & { tasks: TaskDataType[] };
+export interface TaskCompleteResponseType extends BaseResponseType {
+  tasks: TaskDataType[];
+}
 
-export type TaskAttachmentRouteType = RouteType & {
+export interface TaskAttachmentRouteType extends BaseRouteType {
   get: TaskAttachmentGetRequestType;
   deletion: TaskAttachmentDeleteRequestType;
-};
+}
 
-export type TaskAttachmentGetRequestType = { taskId?: string; storageFilename?: string };
+export interface TaskAttachmentGetRequestType extends BaseRequestType {
+  taskId?: string;
+  storageFilename?: string;
+}
 
-export type TaskAttachmentDownloadRouteType = RouteType & {
+export interface TaskAttachmentDownloadRouteType extends BaseRouteType {
   get: TaskAttachmentDownloadRequestType;
-};
+}
 
-export type TaskAttachmentDownloadRequestType = { storageFilename?: string };
+export interface TaskAttachmentDownloadRequestType extends BaseRequestType {
+  storageFilename?: string;
+}
 
-export type TaskAttachmentDeleteRequestType = { [key in 'attachmentId' | 'storageFilename']: string };
+export interface TaskAttachmentDeleteRequestType extends BaseRequestType {
+  attachmentId: string;
+  storageFilename: string;
+}
 
-export type TaskAttachmentDeleteResponseType = BaseResponseType;
+export interface TaskAttachmentDeleteResponseType extends BaseResponseType {}
 
-/**
- * @deprecated
- */
-export type TaskTagListRouteType = RouteType & { get: TaskTagListGetRequestType };
+export interface TaskLikeRouteType extends BaseRouteType {
+  get: TaskLikeGetRequestType;
+  post: TaskLikePostRequestType;
+}
 
-/**
- * @deprecated
- */
-export type TaskTagListGetRequestType = {
+export interface TaskLikeGetRequestType extends BaseRequestType {
   taskIds: string[];
-};
+}
 
-/**
- * @deprecated
- */
-export type TaskTagListGetResponseType = BaseResponseType & {
-  tags?: { tag: string; taskIds: string[] }[];
-};
-
-export type TaskLikeRouteType = RouteType & { get: TaskLikeGetRequestType; post: TaskLikePostRequestType };
-
-export type TaskLikeGetRequestType = {
-  taskIds: string[];
-};
-
-export type TaskLikeGetResponseType = BaseResponseType & {
+export interface TaskLikeGetResponseType extends BaseResponseType {
   likes?: TaskLikeDataType[];
-};
+}
 
-export type TaskLikePostRequestType = { userId: string; taskId: string; liked: boolean };
+export interface TaskLikePostRequestType extends BaseRequestType {
+  userId: string;
+  taskId: string;
+  liked: boolean;
+}
 
-export type TaskLikePostResponseType = BaseResponseType & { taskLike?: TaskLikeDataType };
+export interface TaskLikePostResponseType extends BaseResponseType {
+  taskLike?: TaskLikeDataType;
+}
 
-export type TaskForkRouteType = RouteType & { get: TaskForkGetRequestType; post: TaskForkPostRequestType };
+export interface TaskForkRouteType extends BaseRouteType {
+  get: TaskForkGetRequestType;
+  post: TaskForkPostRequestType;
+}
 
-export type TaskForkPostRequestType = TaskDataType;
+export interface TaskForkPostRequestType extends BaseRequestType {
+  task: TaskDataType;
+}
 
-export type TaskForkPostResponseType = BaseResponseType & { task?: TaskDataType };
+export interface TaskForkPostResponseType extends BaseResponseType {
+  task?: TaskDataType;
+}
 
-export type TaskForkGetRequestType = {
+export interface TaskForkGetRequestType extends BaseRequestType {
   taskIds: string[];
-};
+}
 
-export type TaskForkGetResponseType = BaseResponseType & {
+export interface TaskForkGetResponseType extends BaseResponseType {
   forks?: TaskForkDataType[];
-};
+}
 
-export type TaskTimelineRouteType = RouteType & { get: TaskTimelineGetRequestType };
+export interface TaskTimelineRouteType extends BaseRouteType {
+  get: TaskTimelineGetRequestType;
+}
 
-export type TaskTimelineGetRequestType = { username: string };
+export interface TaskTimelineGetRequestType extends BaseRequestType {
+  username: string;
+}
 
-export type TaskTimelineGetResponseType = BaseResponseType & { timeline: TaskDataType[] };
+export interface TaskTimelineGetResponseType extends BaseResponseType {
+  timeline: TaskDataType[];
+}
 
-export type TaskProgressRouteType = RouteType & { get: TaskProgressGetRequestType };
+export interface TaskProgressRouteType extends BaseRouteType {
+  get: TaskProgressGetRequestType;
+}
 
-export type TaskProgressGetRequestType = { [key in 'afterDate' | 'beforeDate']: DateDataType };
+export interface TaskProgressGetRequestType extends BaseRequestType {
+  afterDate: DateDataType;
+  beforeDate: DateDataType;
+}
 
-export type TaskProgressGetResponseType = BaseResponseType & { progress: TaskProgressDataType };
+export interface TaskProgressGetResponseType extends BaseResponseType {
+  progress: TaskProgressDataType;
+}
 
-export type TaskStatisticsRouteType = RouteType & { get: TaskStatisticsGetRequestType };
+export interface TaskStatisticsRouteType extends BaseRouteType {
+  get: TaskStatisticsGetRequestType;
+}
 
-export type TaskStatisticsGetRequestType = { username: string; year?: number };
+export interface TaskStatisticsGetRequestType extends BaseRequestType {
+  username: string;
+  year?: number;
+}
 
-export type TaskStatisticsGetResponseType = BaseResponseType & {
+export interface TaskStatisticsGetResponseType extends BaseResponseType {
   statistics: { _id: string; completedCount: number }[];
-};
+}
 
-export type TaskVersionValidationRouteType = RouteType & { get: TaskVersionValidationGetRequestType };
+export interface TaskVersionValidationRouteType extends BaseRouteType {
+  get: TaskVersionValidationGetRequestType;
+}
 
-export type TaskVersionValidationGetRequestType = {
+export interface TaskVersionValidationGetRequestType extends BaseRequestType {
   assigneeId: string;
   taskVersions: string;
   category: TaskCategoryType;
-};
+}
 
-export type TaskVersionValidationGetResponseType = BaseResponseType & { diffTasks?: TaskDataType[] };
+export interface TaskVersionValidationGetResponseType extends BaseResponseType {
+  diffTasks?: TaskDataType[];
+}

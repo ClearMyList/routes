@@ -1,9 +1,16 @@
 import { PlazaActivityDataType } from '@clearmylist/data-types';
-import { RouteType } from './route.type';
-import { BaseResponseType } from './base.type';
+import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
-export type PlazaActivityListRouteType = RouteType & { get: PlazaActivityListGetRequestType };
+export interface PlazaActivityListRouteType extends BaseRouteType {
+  get: PlazaActivityListGetRequestType;
+}
 
-export type PlazaActivityListGetRequestType = { username?: string; pageIndex: number; pageSize: number };
+export interface PlazaActivityListGetRequestType extends BaseRequestType {
+  username?: string;
+  pageIndex: number;
+  pageSize: number;
+}
 
-export type PlazaActivityListGetResponseType = BaseResponseType & { activities: PlazaActivityDataType[] };
+export interface PlazaActivityListGetResponseType extends BaseResponseType {
+  activities: PlazaActivityDataType[];
+}

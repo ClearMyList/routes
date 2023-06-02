@@ -1,57 +1,87 @@
 import { UserPreferenceDataType, UserProfileDataType } from '@clearmylist/data-types';
-import { BaseResponseType } from './base.type';
-import { RouteType } from './route.type';
+import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
-export type UserRouteType = RouteType & { get: { username: string } } & {
+export interface UserRouteType extends BaseRouteType {
+  get: { username: string };
   post: { username: string; nickname?: string };
-};
+}
 
-export type UserProfileRouteType = RouteType & {
+export interface UserProfileRouteType extends BaseRouteType {
   get: UserProfileGetRequestType;
   post: UserProfilePostRequestType;
-};
+}
 
-export type UserProfileGetRequestType = { username: string };
+export interface UserProfileGetRequestType extends BaseRequestType {
+  username: string;
+}
 
-export type UserProfileGetResponseType = BaseResponseType & { userProfile?: UserProfileDataType };
+export interface UserProfileGetResponseType extends BaseResponseType {
+  userProfile?: UserProfileDataType;
+}
 
-export type UserProfilePostRequestType = UserProfileDataType;
+export interface UserProfilePostRequestType extends BaseRequestType {
+  userProfile: UserProfileDataType;
+}
 
-export type UserProfilePostResponseType = BaseResponseType & { userProfile: UserProfileDataType };
+export interface UserProfilePostResponseType extends BaseResponseType {
+  userProfile: UserProfileDataType;
+}
 
-export type UserAvatarRouteType = RouteType & { deletion: UserAvatarDeletionRequestType };
+export interface UserAvatarRouteType extends BaseRouteType {
+  deletion: UserAvatarDeletionRequestType;
+}
 
-export type UserAvatarPostResponseType = BaseResponseType & { avatarUrl: string };
+export interface UserAvatarPostResponseType extends BaseResponseType {
+  avatarUrl: string;
+}
 
-export type UserAvatarDeletionRequestType = { username: string };
+export interface UserAvatarDeletionRequestType extends BaseRequestType {
+  username: string;
+}
 
-export type UserAvatarDeletionResponseType = BaseResponseType;
+export interface UserAvatarDeletionResponseType extends BaseResponseType {}
 
-export type UserPreferenceRouteType = RouteType & {
+export interface UserPreferenceRouteType extends BaseRouteType {
   get: UserPreferenceGetRequestType;
   post: UserPreferencePostRequestType;
-};
+}
 
-export type UserPreferenceGetRequestType = { username: string };
+export interface UserPreferenceGetRequestType extends BaseRequestType {
+  username: string;
+}
 
-export type UserPreferenceGetResponseType = BaseResponseType & { userPreference?: UserPreferenceDataType };
+export interface UserPreferenceGetResponseType extends BaseResponseType {
+  userPreference?: UserPreferenceDataType;
+}
 
-export type UserPreferencePostRequestType = UserPreferenceDataType;
+export interface UserPreferencePostRequestType extends BaseRequestType {
+  userPreference: UserPreferenceDataType;
+}
 
-export type UserPreferencePostResponseType = BaseResponseType & { userPreference: UserPreferenceDataType };
+export interface UserPreferencePostResponseType extends BaseResponseType {
+  userPreference: UserPreferenceDataType;
+}
 
-export type UserDeactivateRouteType = RouteType & { post: UserDeactivatePostRequestType };
+export interface UserDeactivateRouteType extends BaseRouteType {
+  post: UserDeactivatePostRequestType;
+}
 
-export type UserDeactivatePostRequestType = { username: string };
+export interface UserDeactivatePostRequestType extends BaseRequestType {
+  username: string;
+}
 
-export type UserDeactivatePostResponseType = BaseResponseType & { deactivated: boolean };
+export interface UserDeactivatePostResponseType extends BaseResponseType {
+  deactivated: boolean;
+}
 
-export type UserPasswordRouteType = RouteType & { put: UserPasswordPutRequestType };
+export interface UserPasswordRouteType extends BaseRouteType {
+  put: UserPasswordPutRequestType;
+}
 
-export type UserPasswordPutRequestType = {
+export interface UserPasswordPutRequestType extends BaseRequestType {
   username: string;
   currentEncryptedPassword: string;
   newEncryptedPassword: string;
-};
+}
 
-export type UserPasswordPutResponseType = BaseResponseType;
+export interface UserPasswordPutResponseType extends BaseResponseType {}

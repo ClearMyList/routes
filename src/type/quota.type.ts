@@ -1,7 +1,7 @@
 import { QuotaDataType } from '@clearmylist/data-types';
-import { RouteType } from './route.type';
+import { BaseRouteType } from './base.type';
 
-export type QuotaRouteType = RouteType & {
+export interface QuotaRouteType extends BaseRouteType {
   get: { username: string };
   post: { username: string; quota: QuotaDataType };
-};
+}

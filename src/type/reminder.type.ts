@@ -1,9 +1,16 @@
 import { DateTimeDataType, ReminderDataType } from '@clearmylist/data-types';
-import { BaseResponseType } from './base.type';
-import { RouteType } from './route.type';
+import { BaseRequestType, BaseResponseType } from './base.type';
+import { BaseRouteType } from './base.type';
 
-export type ReminderRouteType = RouteType & { get: ReminderListGetRequestType };
+export interface ReminderRouteType extends BaseRouteType {
+  get: ReminderListGetRequestType;
+}
 
-export type ReminderListGetRequestType = { laterThan?: DateTimeDataType; beforeThan?: DateTimeDataType };
+export interface ReminderListGetRequestType extends BaseRequestType {
+  laterThan?: DateTimeDataType;
+  beforeThan?: DateTimeDataType;
+}
 
-export type ReminderListGetResponseType = BaseResponseType & { reminders: ReminderDataType[] };
+export interface ReminderListGetResponseType extends BaseResponseType {
+  reminders: ReminderDataType[];
+}

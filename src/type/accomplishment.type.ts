@@ -1,9 +1,15 @@
 import { AccomplishmentDataType } from '@clearmylist/data-types';
-import { BaseResponseType } from './base.type';
-import { RouteType } from './route.type';
+import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
-export type AccomplishmentRouteType = RouteType & { get: AccomplishmentGetRequestType };
+export interface AccomplishmentRouteType extends BaseRouteType {
+  get: AccomplishmentGetRequestType;
+}
 
-export type AccomplishmentGetRequestType = { username: string; year?: number };
+export interface AccomplishmentGetRequestType extends BaseRequestType {
+  username: string;
+  year?: number;
+}
 
-export type AccomplishmentGetResponseType = BaseResponseType & { accomplishment: AccomplishmentDataType };
+export interface AccomplishmentGetResponseType extends BaseResponseType {
+  accomplishment: AccomplishmentDataType;
+}

@@ -48,14 +48,16 @@ export class ApiRoute {
   static UserProfile: UserProfileRouteType = {
     path: '/users/profiles',
     get: { username: '' },
-    post: { id: '', userId: '' }
+    post: { userProfile: { id: '', userId: '' } }
   };
   static UserPreference: UserPreferenceRouteType = {
     path: '/users/preferences',
     get: { username: '' },
     post: {
-      id: '',
-      theme: 'dark'
+      userPreference: {
+        id: '',
+        theme: 'dark'
+      }
     }
   };
   static UserAvatar: UserAvatarRouteType = { path: '/users/avatars', deletion: { username: '' } };
@@ -91,14 +93,16 @@ export class ApiRoute {
     path: '/tasks',
     get: { pageIndex: 0, pageSize: 30 },
     post: {
-      subject: '',
-      creatorId: '',
-      assigneeId: '',
-      visibility: 'private'
+      task: {
+        subject: '',
+        creatorId: '',
+        assigneeId: '',
+        visibility: 'private'
+      }
     },
     deletion: { id: '' }
   };
-  static TaskComplete: TaskCompleteRouteType = { path: '/tasks/complete', post: { id: '', subject: '' } };
+  static TaskComplete: TaskCompleteRouteType = { path: '/tasks/complete', post: { task: { id: '', subject: '' } } };
   static TaskAttachment: TaskAttachmentRouteType = {
     path: '/tasks/attachments',
     get: {},
@@ -116,7 +120,7 @@ export class ApiRoute {
   static TaskFork: TaskForkRouteType = {
     path: '/tasks/forks',
     get: { taskIds: [] },
-    post: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' }
+    post: { task: { subject: '', creatorId: '', assigneeId: '', visibility: 'private' } }
   };
   static TaskTimeline: TaskTimelineRouteType = { path: '/tasks/timelines', get: { username: '' } };
   static TaskProgress: TaskProgressRouteType = {

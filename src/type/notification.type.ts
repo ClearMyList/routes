@@ -1,29 +1,53 @@
 import { NotificationDataType, UserDataType, UserProfileDataType } from '@clearmylist/data-types';
-import { RouteType } from './route.type';
-import { BaseResponseType } from './base.type';
+import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
-export type NotificationRouteType = RouteType & { get: NotificationListGetRequestType };
+export interface NotificationRouteType extends BaseRouteType {
+  get: NotificationListGetRequestType;
+}
 
-export type NotificationListGetRequestType = { subscriberId: string; pageIndex: number; pageSize: number };
+export interface NotificationListGetRequestType extends BaseRequestType {
+  subscriberId: string;
+  pageIndex: number;
+  pageSize: number;
+}
 
-export type NotificationListGetResponseType = BaseResponseType & {
+export interface NotificationListGetResponseType extends BaseResponseType {
   notifications: (NotificationDataType & { publisher?: UserDataType; publisherProfile?: UserProfileDataType })[];
-};
+}
 
-export type NotificationUnreadCountRouteType = RouteType & { get: NotificationUnreadCountGetRequestType };
+export interface NotificationUnreadCountRouteType extends BaseRouteType {
+  get: NotificationUnreadCountGetRequestType;
+}
 
-export type NotificationUnreadCountGetRequestType = { subscriberId: string };
+export interface NotificationUnreadCountGetRequestType extends BaseRequestType {
+  subscriberId: string;
+}
 
-export type NotificationUnreadCountGetResponseType = BaseResponseType & { count: number };
+export interface NotificationUnreadCountGetResponseType extends BaseResponseType {
+  count: number;
+}
 
-export type NotificationReadNotification = RouteType & { post: NotificationReadPostRequestType };
+export interface NotificationReadNotification extends BaseRouteType {
+  post: NotificationReadPostRequestType;
+}
 
-export type NotificationReadPostRequestType = { notificationId: string; subscriberId: string; isRead: boolean };
+export interface NotificationReadPostRequestType extends BaseRequestType {
+  notificationId: string;
+  subscriberId: string;
+  isRead: boolean;
+}
 
-export type NotificationReadPostResponseType = BaseResponseType & { notification?: NotificationDataType };
+export interface NotificationReadPostResponseType extends BaseResponseType {
+  notification?: NotificationDataType;
+}
 
-export type NotificationReadAllNotification = RouteType & { post: NotificationReadAllPostRequestType };
+export interface NotificationReadAllNotification extends BaseRouteType {
+  post: NotificationReadAllPostRequestType;
+}
 
-export type NotificationReadAllPostRequestType = { subscriberId: string; beforeDateTime?: Date };
+export interface NotificationReadAllPostRequestType extends BaseRequestType {
+  subscriberId: string;
+  beforeDateTime?: Date;
+}
 
-export type NotificationReadAllPostResponseType = BaseResponseType;
+export interface NotificationReadAllPostResponseType extends BaseResponseType {}

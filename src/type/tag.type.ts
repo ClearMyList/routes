@@ -1,9 +1,15 @@
 import { TextTagDataType } from '@clearmylist/data-types';
-import { RouteType } from './route.type';
+import { BaseRequestType, BaseRouteType } from './base.type';
 import { BaseResponseType } from './base.type';
 
-export type TextTagRouteType = RouteType & { get: TextTagGetRequestType };
+export interface TextTagRouteType extends BaseRouteType {
+  get: TextTagGetRequestType;
+}
 
-export type TextTagGetRequestType = { text: string | string[] };
+export interface TextTagGetRequestType extends BaseRequestType {
+  text: string | string[];
+}
 
-export type TextTagGetResponseType = BaseResponseType & { textTags?: TextTagDataType[] };
+export interface TextTagGetResponseType extends BaseResponseType {
+  textTags?: TextTagDataType[];
+}

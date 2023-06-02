@@ -1,31 +1,45 @@
-import { AuthUserDataType, UserDataType, UserRoleType } from '@clearmylist/data-types';
-import { BaseResponseType } from './base.type';
-import { RouteType } from './route.type';
+import { AuthUserDataType, UserRoleType } from '@clearmylist/data-types';
+import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
-export type SignInRouteType = RouteType & { post: SignInRequestType };
+export interface SignInRouteType extends BaseRouteType {
+  post: SignInRequestType;
+}
 
-export type SignInRequestType = { [key in 'email' | 'encryptedPassword' | 'reCaptchaToken']: string };
+export interface SignInRequestType extends BaseRequestType {
+  email: string;
+  encryptedPassword: string;
+  reCaptchaToken: string;
+}
 
-export type SignInResponseType = BaseResponseType & {
+export interface SignInResponseType extends BaseResponseType {
   user?: AuthUserDataType;
-};
+}
 
-export type SignUpRouteType = RouteType & { post: SignUpRequestType };
+export interface SignUpRouteType extends BaseRouteType {
+  post: SignUpRequestType;
+}
 
-export type SignUpRequestType = {
+export interface SignUpRequestType extends BaseRequestType {
   username: string;
   email: string;
   encryptedPassword: string;
   reCaptchaToken: string;
   role?: UserRoleType;
-};
+}
 
-export type SignUpResponseType = BaseResponseType & {
+export interface SignUpResponseType extends BaseResponseType {
   user?: AuthUserDataType;
-};
+}
 
-export type EmailVerificationRouteType = RouteType & { post: EmailVerificationPostRequestType };
+export interface EmailVerificationRouteType extends BaseRouteType {
+  post: EmailVerificationPostRequestType;
+}
 
-export type EmailVerificationPostRequestType = { email: string; verificationCode: string };
+export interface EmailVerificationPostRequestType extends BaseRequestType {
+  email: string;
+  verificationCode: string;
+}
 
-export type EmailVerificationResponseType = BaseResponseType & { verified: boolean };
+export interface EmailVerificationResponseType extends BaseResponseType {
+  verified: boolean;
+}
