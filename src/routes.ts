@@ -44,7 +44,11 @@ export class ApiRoute {
     post: { email: '', verificationCode: '' }
   };
 
-  static User: UserRouteType = { path: '/users', get: { username: '' }, post: { username: '', nickname: '' } };
+  static User: UserRouteType = {
+    path: '/users',
+    get: { username: '' },
+    post: { user: { username: '', nickname: '' } }
+  };
   static UserProfile: UserProfileRouteType = {
     path: '/users/profiles',
     get: { username: '' },

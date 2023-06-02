@@ -15,8 +15,7 @@ export interface UserGetResponseType extends BaseResponseType {
 }
 
 export interface UserPostRequestType extends BaseRequestType {
-  username: string;
-  nickname?: string;
+  user: UserDataType;
 }
 
 export interface UserPostResponseType extends BaseResponseType {
