@@ -1,9 +1,26 @@
-import { UserPreferenceDataType, UserProfileDataType } from '@clearmylist/data-types';
+import { UserDataType, UserPreferenceDataType, UserProfileDataType } from '@clearmylist/data-types';
 import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
 export interface UserRouteType extends BaseRouteType {
-  get: { username: string };
-  post: { username: string; nickname?: string };
+  get: UserGetRequestType;
+  post: UserPostRequestType;
+}
+
+export interface UserGetRequestType extends BaseRequestType {
+  username: string;
+}
+
+export interface UserGetResponseType extends BaseResponseType {
+  user?: UserDataType;
+}
+
+export interface UserPostRequestType extends BaseRequestType {
+  username: string;
+  nickname?: string;
+}
+
+export interface UserPostResponseType extends BaseResponseType {
+  user?: UserDataType;
 }
 
 export interface UserProfileRouteType extends BaseRouteType {
