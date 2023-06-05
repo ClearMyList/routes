@@ -1,4 +1,10 @@
-import { UserDataType, UserPreferenceDataType, UserProfileDataType } from '@clearmylist/data-types';
+import {
+  AuthUserDataType,
+  UserDataType,
+  UserFollowerDataType,
+  UserPreferenceDataType,
+  UserProfileDataType
+} from '@clearmylist/data-types';
 import { BaseRequestType, BaseResponseType, BaseRouteType } from './base.type';
 
 export interface UserRouteType extends BaseRouteType {
@@ -106,3 +112,35 @@ export interface UserPasswordPutRequestType extends BaseRequestType {
 }
 
 export interface UserPasswordPutResponseType extends BaseResponseType {}
+
+export interface UserFollowerRouteType extends BaseRouteType {
+  get: UserFollowerGetRequestType;
+  post: UserFollowerPostRequestType;
+  deletion: UserFollowerDeleteRequestType;
+}
+
+export interface UserFollowerGetRequestType extends BaseRequestType {
+  username: string;
+}
+
+export interface UserFollowerGetResponseType extends BaseResponseType {
+  followers?: UserDataType[];
+}
+
+export interface UserFollowerPostRequestType extends BaseRequestType {
+  username: string;
+  followerUsername: string;
+}
+
+export interface UserFollowerPostResponseType extends BaseResponseType {
+  userFollower?: UserFollowerDataType;
+}
+
+export interface UserFollowerDeleteRequestType extends BaseRequestType {
+  username: string;
+  followerUsername: string;
+}
+
+export interface UserFollowerDeleteResponseType extends BaseResponseType {
+  userFollower?: UserFollowerDataType;
+}

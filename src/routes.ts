@@ -26,6 +26,7 @@ import { TemplateAppliedUserRouteType, TemplateApplyRouteType, TemplateRouteType
 import {
   UserAvatarRouteType,
   UserDeactivateRouteType,
+  UserFollowerRouteType,
   UserPasswordRouteType,
   UserPreferenceRouteType,
   UserProfileRouteType,
@@ -73,6 +74,12 @@ export class ApiRoute {
   static UserPassword: UserPasswordRouteType = {
     path: '/users/change-password',
     put: { username: '', currentEncryptedPassword: '', newEncryptedPassword: '' }
+  };
+  static UserFollower: UserFollowerRouteType = {
+    path: '/users/followers',
+    get: { username: '' },
+    post: { username: '', followerUsername: '' },
+    deletion: { username: '', followerUsername: '' }
   };
 
   static Accomplishment: AccomplishmentRouteType = {
