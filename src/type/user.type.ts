@@ -124,7 +124,7 @@ export interface UserFollowerGetRequestType extends BaseRequestType {
 }
 
 export interface UserFollowerGetResponseType extends BaseResponseType {
-  followers?: UserDataType[];
+  followers?: UserFollowerDataType[];
 }
 
 export interface UserFollowerPostRequestType extends BaseRequestType {
