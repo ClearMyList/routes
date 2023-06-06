@@ -51,7 +51,7 @@ export interface UserProfilePostResponseType extends BaseResponseType {
 
 export interface UserAvatarRouteType extends BaseRouteType {
   post: UserAvatarPostRequestType;
-  deletion: UserAvatarDeletionRequestType;
+  deletion: UserAvatarDeleteRequestType;
 }
 
 export interface UserAvatarPostRequestType extends BaseRequestType {
@@ -62,11 +62,11 @@ export interface UserAvatarPostResponseType extends BaseResponseType {
   avatarUrl: string;
 }
 
-export interface UserAvatarDeletionRequestType extends BaseRequestType {
+export interface UserAvatarDeleteRequestType extends BaseRequestType {
   username: string;
 }
 
-export interface UserAvatarDeletionResponseType extends BaseResponseType {}
+export interface UserAvatarDeleteResponseType extends BaseResponseType {}
 
 export interface UserPreferenceRouteType extends BaseRouteType {
   get: UserPreferenceGetRequestType;
