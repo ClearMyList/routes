@@ -1,5 +1,4 @@
 import {
-  AuthUserDataType,
   UserDataType,
   UserFollowerDataType,
   UserPreferenceDataType,
@@ -143,4 +142,16 @@ export interface UserFollowerDeleteRequestType extends BaseRequestType {
 
 export interface UserFollowerDeleteResponseType extends BaseResponseType {
   userFollower?: UserFollowerDataType;
+}
+
+export interface UserFollowingRouteType extends BaseRouteType {
+  get: UserFollowingGetRequestType;
+}
+
+export interface UserFollowingGetRequestType extends BaseRequestType {
+  username: string;
+}
+
+export interface UserFollowingGetResponseType extends BaseResponseType {
+  followings?: UserFollowerDataType[];
 }

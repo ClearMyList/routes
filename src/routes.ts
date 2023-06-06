@@ -27,6 +27,7 @@ import {
   UserAvatarRouteType,
   UserDeactivateRouteType,
   UserFollowerRouteType,
+  UserFollowingRouteType,
   UserPasswordRouteType,
   UserPreferenceRouteType,
   UserProfileRouteType,
@@ -80,6 +81,10 @@ export class ApiRoute {
     get: { username: '' },
     post: { username: '', followerUsername: '' },
     deletion: { username: '', followerUsername: '' }
+  };
+  static UserFollowing: UserFollowingRouteType = {
+    path: '/users/followings',
+    get: { username: '' }
   };
 
   static Accomplishment: AccomplishmentRouteType = {
