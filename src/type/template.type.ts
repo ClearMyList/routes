@@ -1,4 +1,10 @@
-import { DateDataType, TaskDataType, TemplateDataType, TemplateFolderType } from '@clearmylist/data-types';
+import {
+  DateDataType,
+  TaskDataType,
+  TaskVisibilityType,
+  TemplateDataType,
+  TemplateFolderType
+} from '@clearmylist/data-types';
 import { BaseRequestType, BaseResponseType } from './base.type';
 import { BaseRouteType } from './base.type';
 
@@ -48,6 +54,7 @@ export interface TemplateApplyRouteType extends BaseRouteType {
 export interface TemplateApplyPostRequestType extends BaseRequestType {
   templateId: string;
   firstDate: DateDataType;
+  visibility?: TaskVisibilityType;
 }
 
 export interface TemplateApplyPostResponseType extends BaseResponseType {
