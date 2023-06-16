@@ -14,6 +14,7 @@ import {
   TaskAttachmentDownloadRouteType,
   TaskAttachmentRouteType,
   TaskCompleteRouteType,
+  TaskCountRouteType,
   TaskForkRouteType,
   TaskLikeRouteType,
   TaskProgressRouteType,
@@ -162,6 +163,7 @@ export class ApiRoute {
       category: 'plan'
     }
   };
+  static TaskCount: TaskCountRouteType = { path: '/tasks/count', get: { username: '', category: 'plan' } };
 
   static Template: TemplateRouteType = {
     path: '/templates',

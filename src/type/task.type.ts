@@ -191,3 +191,16 @@ export interface TaskVersionValidationGetRequestType extends BaseRequestType {
 export interface TaskVersionValidationGetResponseType extends BaseResponseType {
   diffTasks?: TaskDataType[];
 }
+
+export interface TaskCountRouteType extends BaseRouteType {
+  get: TaskCountGetRequestType;
+}
+
+export interface TaskCountGetRequestType extends BaseRequestType {
+  username: string;
+  category: TaskCategoryType;
+}
+
+export interface TaskCountGetResponseType extends BaseResponseType {
+  count?: number;
+}
