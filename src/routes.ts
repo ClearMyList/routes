@@ -35,7 +35,7 @@ import {
   UserRouteType
 } from './type/user.type';
 
-export class ApiRoute {
+export default class ApiRoute {
   static SignIn: SignInRouteType = { path: '/sign-in', post: { email: '', encryptedPassword: '', reCaptchaToken: '' } };
   static SignUp: SignUpRouteType = {
     path: '/sign-up',
