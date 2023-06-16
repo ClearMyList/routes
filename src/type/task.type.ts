@@ -20,7 +20,7 @@ export interface TaskListGetRequestType extends BaseRequestType {
   pageIndex: number;
   pageSize: number;
   userId?: string;
-  cateogry?: TaskCategoryType;
+  category?: TaskCategoryType;
   query?: string;
 }
 
