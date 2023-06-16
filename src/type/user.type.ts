@@ -1,4 +1,5 @@
 import {
+  UserCombinedDataType,
   UserDataType,
   UserFollowerDataType,
   UserPreferenceDataType,
@@ -154,4 +155,16 @@ export interface UserFollowingGetRequestType extends BaseRequestType {
 
 export interface UserFollowingGetResponseType extends BaseResponseType {
   followings?: UserFollowerDataType[];
+}
+
+export interface UserFriendListGetRouteType extends BaseRouteType {
+  get: UserFriendListGetRequestType;
+}
+
+export interface UserFriendListGetRequestType extends BaseRequestType {
+  username: string;
+}
+
+export interface UserFriendListGetResponseType extends BaseResponseType {
+  users?: UserCombinedDataType[];
 }
