@@ -171,7 +171,6 @@ export class ApiRoute {
     post: { template: { authorId: '', subject: '' } },
     deletion: { id: '' }
   };
-
   static TemplateApply: TemplateApplyRouteType = {
     path: '/templates/apply',
     post: { templateId: '', firstDate: { year: 1970, month: 0, date: 0 } }
